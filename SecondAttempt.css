@@ -28,7 +28,7 @@
 }
 
 /* Hide Progress Bars */
-#progress-pledged {
+#progress--container {
     display: none !important; 
 }
 #progress-received {
