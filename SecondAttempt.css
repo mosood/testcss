@@ -2,37 +2,32 @@
 /* CSS Color Variables                        */
 /*--------------------------------------------*/
 :host {
-    --root-text-color: #203551;
+    --root-text-color: #565656;
     --root-font-size: 14px;
     --root-line-height: 24px;
-    --primary: #277c9f;
+    --primary: #203551;  /* Updated color */
     --secondary: #E12726;
     --form-field-bgcolor: #f9f9f9;
     --form-field-border: #b4c5cf;
-    --form-field-border--active: #95368f;
+    --form-field-border--active: #203551;  /* Updated color */
     --form-valid: #42bc34;
     --form-invalid: #dc3545;
     --form-btn-primary-text: #fff;
-    --form-btn-primary-bgcolor: #95368f;
-    --form-btn-primary-hover: #D980D3;
-    --form-btn-primary-active: #D980D3;
+    --form-btn-primary-bgcolor: #203551;  /* Updated color */
+    --form-btn-primary-hover: #51687A;  /* Slightly lighter version for hover state */
+    --form-btn-primary-active: #51687A;  /* Slightly lighter version for active state */
     --form-btn-secondary-text: #fff;
-    --form-btn-secondary-bgcolor: #95368f;
-    --form-btn-secondary-hover: #D980D3;
-    --form-btn-secondary-active: #D980D3;
+    --form-btn-secondary-bgcolor: #203551;  /* Updated color */
+    --form-btn-secondary-hover: #51687A;  /* Updated color for hover */
+    --form-btn-secondary-active: #51687A;  /* Updated color for active state */
     --form-btn-disabled: #657783;
     --card-bgcolor: #fff;
     --card-title-color: #696969;
     --card-header-bgcolor: #6c757d;
     --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
-}
-
-/* Hide Progress Bars */
-#progress--container {
-    display: none !important; 
-}
-#progress-received {
-    display: none !important; 
+    --progress-pledged: #203551;  /* Updated color */
+    --progress-received: #000;
+    --custom-css-loaded: 'true';
 }
 
 /*--------------------------------------------*/
