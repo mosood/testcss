@@ -30,6 +30,15 @@
     --custom-css-loaded: 'true';
 }
 
+
+/* Hide Progress Bars */
+#progress-pledged {
+    display: none !important; 
+}
+#progress-received {
+    display: none !important; 
+}
+
 /*--------------------------------------------*/
 /* COMPONENT CONTAINER                        */
 /*--------------------------------------------*/
@@ -1034,10 +1043,16 @@
     margin-bottom: 10px !important;
 }
 
-.mppw-form-field__control > label:hover input ~ .mppw-radio__vertical,
-.mppw-form-field__control > label input:checked ~ .mppw-radio__vertical {
-    background-color: var(--primary);
+/* Update the size of the input box */
+.mppw-form-field__control {
+    width: 300px;  /* Adjust width as per your requirement */
+    height: 50px;  /* Adjust height as per your requirement */
+    padding: 10px;  /* Adjust padding for spacing inside the box */
+    font-size: 16px;  /* Adjust font size if needed */
+    border-radius: 5px;  /* Optional: round the corners */
+    box-sizing: border-box;  /* Ensure padding is included in the width and height calculations */
 }
+
 
 .mppw-radio__vertical:after {
     content: "";
@@ -4249,12 +4264,12 @@ select:focus + .focus {
     width: 100%;
 
 #progress-pledged {
-    display: none; /* Hides the progress bar */
+    display: none !important; 
 
 }
 
 #progress-received {
-    display: none; /* Hides the progress bar */
+    display: none !important;  /* Hides the progress bar */
 
 }
 
