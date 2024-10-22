@@ -4,6 +4,7 @@
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 20px;
     line-height: 1.6;
+    text-transform: uppercase; /* Converts text to all caps */
     margin-bottom: 20px;
     text-align: justify; /* Optional: Aligns text justify */
 }
