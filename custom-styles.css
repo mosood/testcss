@@ -66,7 +66,7 @@ ul.mpp-innerpage--contacts {
 input.mppw-form-field__control {
     border: 2px solid #1b88b0; /* Blue border */
     background-color: #e7f5ff; /* Light blue background */
-    color: #1b88b0; /* Blue text */
+    color: red; /* Blue text */
     font-size: 16px; /* Adjust font size */
     padding: 10px; /* Add inner spacing */
     border-radius: 5px; /* Rounded corners */
