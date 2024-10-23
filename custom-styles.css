@@ -15,7 +15,6 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 15px;
-    text-align: center; /* Center-aligns text */
+    text-align: justify;
     padding: 10px; /* Adds padding */
-    border: 1px solid #ccc; /* Neutral gray border */
 }
