@@ -12,12 +12,19 @@
 
 /* Updated .mpp-card--description style */
 .mpp-card--description {
-    font-family: 'Source Sans Pro', Arial, sans-serif; /* Clean, consistent font */
-    font-size: 16px; /* Slightly smaller size for card descriptions */
-    line-height: 1.6; /* Adjusted line height */
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
     margin-bottom: 15px;
-    text-align: left; /* Aligns text to the left to avoid spacing issues */
-    /* Prevent extra spaces and ensure normal word wrapping */
-    white-space: normal; /* Ensures normal word wrapping */
-    word-break: break-word; /* Prevents words from breaking awkwardly */
+    text-align: left; /* Aligns text to the left */
+    padding: 10px;
+    /* Prevent content from being clipped */
+    overflow: visible; /* Ensure content is not hidden */
+    white-space: normal; /* Allow normal wrapping */
+    word-break: break-word; /* Break words if they are too long */
+
+    /* Ensure the card fits its content */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+    width: 100%; /* Make sure the element fits the container */
+    max-width: 100%; /* Prevent overflow beyond parent */
 }
