@@ -10,19 +10,22 @@
     color: #333; /* Dark gray for readability */
     text-align: justify;
     word-break: break-word; /* Prevent long words from breaking awkwardly */
-    white-space: normal;
-}
 
-/* Style for .mpp-card--description */
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+/* Style for the text box */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6; /* Spacing between lines */
-    margin-bottom: 20px;
-    color: #333; /* Consistent dark gray */
+    font-size: 18px; /* Adjust to match screenshot size */
+    line-height: 1.8; /* Ensure good spacing between lines */
+    color: #333; /* Dark gray text for readability */
     text-align: left; /* Align text to the left */
-    padding: 15px; /* Inner padding for consistent space inside the card */
-    border-radius: 8px; /* Smooth, rounded corners */
-    box-sizing: border-box; /* Include padding and border in width */
-    background-color: #fff; /* Optional: White background */
+    padding: 20px; /* Add space inside the box */
+    margin: 15px 0; /* Space above and below the box */
+    border-radius: 10px; /* Smooth rounded corners */
+    background-color: #f9f9f9; /* Light gray background */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    word-break: break-word; /* Prevent long words from overflowing */
+    white-space: normal;
+    box-sizing: border-box; /* Ensure padding and borders are included */
 }
