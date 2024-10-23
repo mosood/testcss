@@ -10,8 +10,7 @@
     color: #333; /* Dark gray for readability */
     text-align: justify;
     word-break: break-word; /* Prevent long words from breaking awkwardly */
-
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+}
 
 /* Style for the text box */
 .mpp-card--description {
@@ -28,4 +27,54 @@
     word-break: break-word; /* Prevent long words from overflowing */
     white-space: normal;
     box-sizing: border-box; /* Ensure padding and borders are included */
+}
+
+/* Style for Event Contacts */
+ul.mpp-innerpage--contacts {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.mpp-innerpage--contacts .mpp-innerpage--contact {
+    display: flex; /* Aligns content horizontally */
+    align-items: center; /* Centers content vertically */
+    gap: 10px; /* Adds space between elements */
+    margin-bottom: 15px; /* Spacing between contacts */
+    font-weight: 500; /* Apply font weight 500 */
+}
+
+.mpp-innerpage--contacts .mpp-innerpage--contact-badge {
+    background-color: #1b88b0; /* Badge background color */
+    color: white; /* Text color for badge */
+    font-weight: 500; /* Ensure consistent weight for badge */
+    font-size: 18px; /* Adjust badge font size */
+    padding: 5px 10px; /* Add padding inside badge */
+    border-radius: 50%; /* Make badge circular */
+    display: inline-block;
+    text-align: center;
+}
+
+.mpp-innerpage--contacts .mpp-innerpage--name {
+    font-weight: 500; /* Set font weight to 500 for contact name */
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.4; /* Improve readability */
+}
+
+/* Style for Input Fields */
+input.mppw-form-field__control {
+    border: 2px solid #1b88b0; /* Blue border */
+    background-color: #e7f5ff; /* Light blue background */
+    color: #1b88b0; /* Blue text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px; /* Add inner spacing */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Glow effect */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+input.mppw-form-field__control:focus {
+    border-color: #007bff; /* Darker blue on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Stronger glow on focus */
 }
