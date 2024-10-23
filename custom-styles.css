@@ -2,29 +2,27 @@
 
 /* Style for .mpp-innerpage--description */
 .mpp-innerpage--description {
-    font-family: 'Source Sans Pro', Arial, sans-serif; /* Light, clean sans-serif font */
-    font-size: 20px; /* Adjust size to match the screenshot */
-    line-height: 1.5; /* Increase line height for readability */
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.8; /* Slightly more space between lines */
     margin-bottom: 20px;
-    color: #333; /* Darker gray to match the look */
-    text-align: justify; /* Optional: Aligns text justify */
+    padding: 10px; /* Add inner padding for better spacing */
+    color: #333; /* Dark gray for readability */
+    text-align: justify;
+    word-break: break-word; /* Prevent long words from breaking awkwardly */
+    white-space: normal;
 }
 
-/* Updated .mpp-card--description style */
+/* Style for .mpp-card--description */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    text-align: left; /* Aligns text to the left */
-    padding: 10px;
-    /* Prevent content from being clipped */
-    overflow: visible; /* Ensure content is not hidden */
-    white-space: normal; /* Allow normal wrapping */
-    word-break: break-word; /* Break words if they are too long */
-
-    /* Ensure the card fits its content */
-    box-sizing: border-box; /* Include padding and border in width calculations */
-    width: 100%; /* Make sure the element fits the container */
-    max-width: 100%; /* Prevent overflow beyond parent */
+    line-height: 1.6; /* Spacing between lines */
+    margin-bottom: 20px;
+    color: #333; /* Consistent dark gray */
+    text-align: left; /* Align text to the left */
+    padding: 15px; /* Inner padding for consistent space inside the card */
+    border-radius: 8px; /* Smooth, rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: #fff; /* Optional: White background */
 }
