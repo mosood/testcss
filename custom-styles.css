@@ -10,10 +10,14 @@
     text-align: justify; /* Optional: Aligns text justify */
 }
 
-/* Style for .mpp-card--description */
+/* Updated .mpp-card--description style */
 .mpp-card--description {
-    font-family: 'Source Sans Pro', Arial, sans-serif; /* Consistent font */
-    font-size: 15px; /* Slightly smaller for card descriptions */
-    line-height: 1; /* Adjusted line height */
-    text-align: justify; /* Center-aligns text */
+    font-family: 'Source Sans Pro', Arial, sans-serif; /* Clean, consistent font */
+    font-size: 16px; /* Slightly smaller size for card descriptions */
+    line-height: 1.6; /* Adjusted line height */
+    margin-bottom: 15px;
+    text-align: left; /* Aligns text to the left to avoid spacing issues */
+    /* Prevent extra spaces and ensure normal word wrapping */
+    white-space: normal; /* Ensures normal word wrapping */
+    word-break: break-word; /* Prevents words from breaking awkwardly */
 }
