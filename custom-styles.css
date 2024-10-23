@@ -11,8 +11,6 @@
     text-align: justify;
     word-break: break-word; /* Prevent long words from breaking awkwardly */
 
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
-
 /* Style for the text box */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
