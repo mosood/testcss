@@ -35,4 +35,18 @@
     font-size: 16px; /* Optional: Adjust size if required */
     line-height: 1.4; /* Optional: Adjust line height */
     padding-left: 10px; /* Optional: Adds a little padding for better alignment */
-}    
+}
+/* New verified selector for Event Contact title */
+.mpp-innerpage--special-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+/* Specific style for Event Contact */
+.mpp-innerpage--special-title:first-of-type {
+    font-weight: 500;
+}
+
+/* Style for the container of Event Contact */
+.mpp-innerpage--special:first-of-type {
+    margin-bottom: 1rem;
+}
