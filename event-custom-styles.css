@@ -1,52 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
 
-/* Style for .mpp-innerpage--description */
+/* Base styles for all screen sizes */
 .mpp-innerpage--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-size: 18px;
-    line-height: 1.8; /* Slightly more space between lines */
+    line-height: 1.8;
     margin-bottom: 20px;
-    padding: 10px; /* Add inner padding for better spacing */
-    color: #333; /* Dark gray for readability */
-    text-align: justify;
-    word-break: break-word; /* Prevent long words from breaking awkwardly */
+    padding: 10px;
+    color: #333;
+    text-align: left; /* Changed from justify to left for consistency */
+    word-break: break-word;
+}
 
-/* Style for the text box */
+/* Text box styles */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px; /* Adjust to match screenshot size */
-    line-height: 1.8; /* Ensure good spacing between lines */
-    color: #333; /* Dark gray text for readability */
-    text-align: left; /* Align text to the left */
-    padding: 20px; /* Add space inside the box */
-    margin: 15px 0; /* Space above and below the box */
-    border-radius: 10px; /* Smooth rounded corners */
-    background-color: #f9f9f9; /* Light gray background */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    word-break: break-word; /* Prevent long words from overflowing */
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    word-break: break-word;
     white-space: normal;
-    box-sizing: border-box; /* Ensure padding and borders are included */
+    box-sizing: border-box;
 }
 
-/* Style for Event Contact Name */
+/* Event Contact Name styles */
 .mpp-innerpage--name {
-    font-weight: 500; /* Sets the font weight to 500 */
-    color: #eb0606; /* Ensure it uses the same red color if needed */
-    font-size: 16px; /* Optional: Adjust size if required */
-    line-height: 1.4; /* Optional: Adjust line height */
-    padding-left: 10px; /* Optional: Adds a little padding for better alignment */
+    font-weight: 500;
+    color: #eb0606;
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 10px;
 }
-/* New verified selector for Event Contact title */
+
+/* Event Contact title styles */
 .mpp-innerpage--special-title {
     font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
-/* Specific style for Event Contact */
 .mpp-innerpage--special-title:first-of-type {
     font-weight: 500;
 }
 
-/* Style for the container of Event Contact */
 .mpp-innerpage--special:first-of-type {
     margin-bottom: 1rem;
+}
+
+/* Mobile styles (screens smaller than 768px) */
+@media screen and (max-width: 767px) {
+    .mpp-innerpage--description,
+    .mpp-card--description {
+        font-size: 16px; /* Slightly smaller font for mobile */
+        padding: 15px; /* Reduced padding for mobile */
+        line-height: 1.6; /* Slightly tighter line height for mobile */
+    }
+
+    .mpp-card--description {
+        margin: 10px 0; /* Reduced margins for mobile */
+        border-radius: 8px; /* Slightly smaller border radius */
+    }
+
+    .mpp-innerpage--name {
+        font-size: 15px; /* Slightly smaller font for mobile */
+        padding-left: 8px; /* Reduced padding for mobile */
+    }
+}
+
+/* Tablet styles (screens between 768px and 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mpp-innerpage--description,
+    .mpp-card--description {
+        font-size: 17px; /* Medium size font for tablets */
+        padding: 18px; /* Medium padding for tablets */
+    }
+}
+
+/* Ensure consistent text alignment across all devices */
+* {
+    text-align: left !important; /* Force left alignment everywhere */
 }
