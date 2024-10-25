@@ -86,7 +86,6 @@ form > h2::after {
     padding: 10px 20px !important;  /* Reduced padding */
     font-size: 16px !important;     /* Reduced font size */
     font-weight: 500 !important;
-/*     color: var(--brand-white) !important; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
