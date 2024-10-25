@@ -69,7 +69,7 @@ form > h2::after {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 25px;
-    max-width: 600px;
+    max-width: 100px;
 }
 
 /* Form Fields Layout */
