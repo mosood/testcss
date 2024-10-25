@@ -323,7 +323,7 @@ input[type="date"].mppw-form-field__control {
 /* Total Pledge Display */
 .total-pledge {
     font-size: 16px !important;
-    color: var(--brand-navy) !important;
+    color: #277c9f !important;
     margin: 15px 0 !important;
     padding: 10px !important;
     background: #fff !important;
@@ -350,7 +350,7 @@ input[type="date"].mppw-form-field__control {
 .contact-section .mppw-form-field__label {
     position: relative !important;
     display: block !important;
-    color: var(--brand-navy) !important;
+    color: #277c9f !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 8px !important;
