@@ -80,7 +80,7 @@ form > h2::after {
 
 /* Submit Button Styling */
 .submit--btn {
-    background: #277c9f !important; /* Changed from gradient to solid color */
+    background: #277c9f !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
@@ -92,10 +92,13 @@ form > h2::after {
     text-transform: none !important;
     width: 100% !important;
     max-width: 300px !important;
+    text-align: center !important;  /* Add this line to center the text */
+    display: block !important;      /* Add this to ensure block-level display */
+    margin: 0 auto !important;      /* Add this to center the button itself */
 }
 
 .submit--btn:hover {
-    background: #1e6180 !important; /* Slightly darker shade for hover */
+    background: #1e6180 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
