@@ -80,7 +80,7 @@ form > h2::after {
 
 /* Submit Button Styling */
 .submit--btn {
-    background: #ffffff !important;
+    background: #1e6180 !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;  /* Reduced padding */
@@ -99,7 +99,7 @@ form > h2::after {
 }
 
 .submit--btn:hover {
-    background: #1e6180 !important;
+    background: #ffffff !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
