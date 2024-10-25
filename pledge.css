@@ -83,18 +83,19 @@ form > h2::after {
     background: #277c9f !important;
     border: none !important;
     border-radius: 8px !important;
-    padding: 12px 24px !important;
-    font-size: 18px !important;
+    padding: 10px 20px !important;  /* Reduced padding */
+    font-size: 16px !important;     /* Reduced font size */
     font-weight: 500 !important;
     color: var(--brand-white) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
-    width: 100% !important;
-    max-width: 300px !important;
-    text-align: center !important;  /* Add this line to center the text */
-    display: block !important;      /* Add this to ensure block-level display */
-    margin: 0 auto !important;      /* Add this to center the button itself */
+    width: auto !important;         /* Changed from 100% to auto */
+    min-width: 150px !important;    /* Set minimum width */
+    max-width: 200px !important;    /* Reduced max-width */
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .submit--btn:hover {
