@@ -120,7 +120,7 @@ form > h2::after {
     z-index: 1 !important;
 }
 
-/* Frequency Dropdown - Updated */
+/* Frequency Dropdown - Updated with empty initial state */
 select.mppw-form-field__control {
     appearance: auto !important;
     -webkit-appearance: auto !important;
@@ -133,6 +133,21 @@ select.mppw-form-field__control {
     height: 40px !important;
     width: 100% !important;
     max-width: 600px !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    padding-right: 40px !important;
+}
+
+/* Hide default select text */
+select.mppw-form-field__control option[value=""] {
+    display: none !important;
+}
+
+/* Style for initial state of select */
+select.mppw-form-field__control:invalid,
+select.mppw-form-field__control option:first-child {
+    color: transparent !important;
 }
 
 /* Select Options */
