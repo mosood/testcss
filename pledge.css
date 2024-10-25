@@ -9,7 +9,53 @@
     --brand-white: #ffffff;
     --brand-black: #000000;
 }
+/* Enhanced Progress hiding */
+h2,
+.progress,
+div[class*="progress"],
+div[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+h2:contains("Progress"),
+div:has(> h2:contains("Progress")),
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress,
+h2:matches([text*="Progress"]),
+h2[text*="Progress"],
+h2:has(text()[contains(., "Progress")]),
+div:has(h2:contains("Progress")),
+div.progress,
+div[class^="progress"],
+div[class*=" progress"],
+div[id^="progress"],
+div[id*=" progress"],
+section:has(h2:contains("Progress")),
+*:has(> h2:contains("Progress")) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+}
 
+/* Additional specific Progress text hiding */
+h2,
+div,
+section,
+span {
+    &:has(text()[contains(., "Progress")]) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
 /* Target Shadow DOM elements */
 :host,
 :root,
