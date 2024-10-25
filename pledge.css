@@ -99,7 +99,7 @@ form > h2::after {
 }
 
 .submit--btn:hover {
-    background: #ffffff !important;
+    background: #000000 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
