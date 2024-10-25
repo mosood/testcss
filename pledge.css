@@ -201,10 +201,68 @@ input[type="date"].mppw-form-field__control {
     display: inline-block !important;
 }
 
-/* Contact Section */
+/* Contact Section - Updated */
 .contact-section {
     margin-top: 30px !important;
     max-width: 800px !important;
+}
+
+/* Contact Fields Layout */
+.contact-section .mppw-form-field {
+    position: relative !important;
+    margin-bottom: 20px !important;
+    max-width: 600px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Contact Fields Labels */
+.contact-section .mppw-form-field__label {
+    position: relative !important;
+    display: block !important;
+    color: var(--brand-navy) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px !important;
+    z-index: 2 !important;
+    order: 1 !important;
+    background: transparent !important;
+    transform: none !important;
+    opacity: 1 !important;
+    text-align: left !important;
+}
+
+/* Contact Fields Inputs */
+.contact-section .mppw-form-field__control {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    line-height: 1.4 !important;
+    order: 2 !important;
+}
+
+/* Hide floating labels in contact section */
+.contact-section .floating-label,
+.contact-section .mppw-form-field > span:not(.mppw-form-field__label) {
+    display: none !important;
+}
+
+/* Contact section horizontal layout */
+.contact-section .mppw-form-field-group {
+    display: flex !important;
+    gap: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.contact-section .mppw-form-field-group .mppw-form-field {
+    flex: 1 !important;
 }
 
 /* Submit Button Styling */
@@ -298,5 +356,14 @@ h2:contains("Progress") {
     
     select.mppw-form-field__control {
         width: 100% !important;
+    }
+
+    .contact-section .mppw-form-field-group {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .contact-section .mppw-form-field-group .mppw-form-field {
+        max-width: 100% !important;
     }
 }
