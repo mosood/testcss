@@ -80,7 +80,7 @@ form > h2::after {
 
 /* Submit Button Styling */
 .submit--btn {
-    background: #277c9f !important;
+    background: #ffffff !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;  /* Reduced padding */
