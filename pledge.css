@@ -80,7 +80,7 @@ form > h2::after {
 
 /* Submit Button Styling */
 .submit--btn {
-    background: linear-gradient(45deg, #8e44ad, #9b59b6) !important;
+    background: #277c9f !important; /* Changed from gradient to solid color */
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
@@ -95,7 +95,7 @@ form > h2::after {
 }
 
 .submit--btn:hover {
-    background: linear-gradient(45deg, #9b59b6, #8e44ad) !important;
+    background: #1e6180 !important; /* Slightly darker shade for hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
