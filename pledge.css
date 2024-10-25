@@ -1,4 +1,7 @@
-/* Define brand colors as CSS variables */
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
+
+/* Define brand colors and base styles */
 :root {
     --brand-blue: #277c9f;
     --brand-navy: #203551;
@@ -7,15 +10,25 @@
     --brand-black: #000000;
 }
 
+/* Apply base font to everything */
+* {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+    text-align: left !important;
+}
+
 /* Main Campaign Title */
 .mpp-innerpage h1 {
     color: var(--brand-navy) !important;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 /* Campaign Subtitle */
 .mpp-innerpage > p {
     visibility: hidden;
     position: relative;
+    margin-bottom: 20px;
 }
 .mpp-innerpage > p::after {
     content: "God, where do you want me to be in my giving?";
@@ -23,12 +36,15 @@
     position: absolute;
     left: 0;
     color: var(--brand-blue) !important;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
 /* Create a Pledge heading */
 form > h2 {
     visibility: hidden;
     position: relative;
+    margin-bottom: 20px;
 }
 form > h2::after {
     content: "Set Your Goal";
@@ -36,84 +52,82 @@ form > h2::after {
     position: absolute;
     left: 0;
     color: var(--brand-navy) !important;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 20px;
 }
 
-/* Pledge Details heading */
-form > h3:first-of-type {
-    visibility: hidden;
-    position: relative;
-}
-form > h3:first-of-type::after {
-    content: "My Giving Goal";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: var(--brand-blue) !important;
+/* Form section styling */
+.mppw-form-field {
+    margin-bottom: 15px;
 }
 
 /* Form Labels */
 .mppw-form-field__label {
     color: var(--brand-navy) !important;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
 }
 
-/* Pledge Amount label */
-.mppw-form-field__label:has(+ input) {
-    visibility: hidden;
-    position: relative;
-}
-.mppw-form-field__label:has(+ input)::after {
-    content: "Goal Amount";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: var(--brand-navy) !important;
-}
-
-/* Total Pledge text */
-.form--row strong {
-    visibility: hidden;
-    position: relative;
-}
-.form--row strong::after {
-    content: "Total Giving Goal:";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: var(--brand-blue) !important;
-    font-weight: bold;
-}
-
-/* Amount display */
-.form--row span {
-    color: var(--brand-gold) !important;
-    font-weight: bold;
-}
-
-/* Create Pledge button */
-.submit--btn {
-    visibility: hidden;
-    position: relative;
-    background-color: var(--brand-blue) !important;
-    border-color: var(--brand-blue) !important;
-}
-.submit--btn::after {
-    content: "Create Giving Goal";
-    visibility: visible;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--brand-white) !important;
-}
-
-/* Form input fields */
+/* Form Inputs */
 .mppw-form-field__control {
-    border-color: var(--brand-navy) !important;
-    color: var(--brand-black) !important;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-.mppw-form-field__control:focus {
-    border-color: var(--brand-blue) !important;
-    outline-color: var(--brand-blue) !important;
+
+/* Submit Button Styling */
+.submit--btn {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: var(--brand-white) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    text-transform: none !important;
+    width: 100% !important;
+    max-width: 300px !important;
+}
+
+.submit--btn:hover {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Card Description */
+.mpp-card--description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 767px) {
+    .mpp-innerpage h1 {
+        font-size: 22px;
+    }
+    
+    .mpp-innerpage > p::after,
+    .mpp-card--description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .submit--btn {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+    }
 }
 
 /* Hide Progress section */
@@ -122,12 +136,7 @@ h2:contains("Progress") {
     display: none !important;
 }
 
-/* Contact section heading */
-form h3 {
-    color: var(--brand-navy) !important;
-}
-
-/* Required field asterisks */
-.mppw-form-field__label::after {
-    color: var(--brand-gold) !important;
+/* Ensure text replacement still works with new font */
+[class*="mppw-"] {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
 }
