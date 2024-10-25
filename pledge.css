@@ -10,66 +10,119 @@
     --brand-black: #000000;
 }
 
-/* Progress Hide Selectors - More Specific */
-:host .progress--container,
-:host div[class*="progress--container"],
-:host h2:has(span:only-child:contains("Progress")),
-:host h2[data-text="Progress"],
-:host h2:contains("Progress"),
-:host [class*="progress"],
-:host [id*="progress"],
-.progress--container,
-.progress-bar,
-.progress-container,
-[class*="progress--container"],
-[class*="progress-bar"],
-[class*="progress-container"],
-h2:contains("Progress"),
-div:has(> h2:contains("Progress")),
-h2[data-text="Progress"],
-div[class*="progress"],
-div[id*="progress"],
-div[class*="progress--container"],
-div[class*="progress-bar"],
-div[class*="progress-container"],
-div[role="progressbar"],
-.progress,
-#progress,
-[aria-label*="progress"],
-[aria-label*="Progress"],
-div:has(> .progress),
-div:has(> .progress-bar),
-.mpp-progress,
-.mpp-progress-bar,
-div[class^="progress"],
-div[class*=" progress"],
-div:has(text()[contains(., "pledged of")]) {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    position: absolute !important;
-    left: -9999px !important;
-    max-height: 0 !important;
-    min-height: 0 !important;
+/* Target Shadow DOM elements */
+:host,
+:root,
+mpp-pledge-campaign,
+mpp-pledge-campaign::part(*),
+mpp-pledge-campaign::shadow-part(*) {
+    & h2,
+    & div,
+    & section,
+    & article,
+    & span {
+        &:has(text()[contains(., "Progress")]),
+        &:has(text()[contains(., "pledged of")]),
+        &:has(text()[contains(., "Goal")]),
+        &[class*="progress"],
+        &[id*="progress"],
+        &[class*="Progress"],
+        &[id*="Progress"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            position: absolute !important;
+            clip: rect(0 0 0 0) !important;
+            clip-path: inset(50%) !important;
+        }
+    }
 }
 
-/* Hide any text containing pledge amounts */
-div:has(text()[contains(., "$")]:contains("Goal")),
-div:contains("pledged of"),
-div:contains("Goal"),
-div[class*="pledge-amount"],
-div[class*="pledge-goal"] {
+/* Target specific shadow elements */
+mpp-pledge-campaign::shadow-part(progress),
+mpp-pledge-campaign::shadow-part(progress-container),
+mpp-pledge-campaign::part(progress),
+mpp-pledge-campaign::part(progress-container) {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
+    width: 0 !important;
+    opacity: 0 !important;
+}
+
+/* Directly target the shadow root */
+mpp-pledge-campaign {
+    & > *,
+    &::shadow,
+    &::part(*) {
+        & .progress,
+        & .progress-bar,
+        & .progress-container,
+        & [class*="progress"],
+        & [id*="progress"],
+        & h2:has(text()[contains(., "Progress")]),
+        & div:has(text()[contains(., "pledged of")]),
+        & div:has(text()[contains(., "Goal")]) {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+        }
+    }
+}
+
+/* Additional specific selectors */
+:host {
+    .mpp-progress,
+    .mpp-progress-bar,
+    .mpp-innerpage-progress,
+    .progress--container,
+    div[class*="progress"],
+    h2:contains("Progress"),
+    div:has(> h2:contains("Progress")),
+    div:has(text()[contains(., "pledged of")]),
+    div:has(text()[contains(., "Goal")]) {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(50%) !important;
+    }
+}
+
+/* Override any potential visibility settings */
+[class*="progress"],
+[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+[aria-label*="progress"],
+[aria-label*="Progress"],
+.progress,
+.progress-bar,
+.progress-container,
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 /* Apply base font to everything */
@@ -135,7 +188,7 @@ form > h2::after {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
 }
 
-/* Form Fields Layout - Updated */
+/* Form Fields Layout */
 .mppw-form-field {
     position: relative !important;
     margin-bottom: 20px !important;
@@ -144,7 +197,7 @@ form > h2::after {
     flex-direction: column !important;
 }
 
-/* Form Labels - Updated positioning */
+/* Form Labels */
 .mppw-form-field__label {
     position: relative !important;
     display: block !important;
@@ -165,7 +218,7 @@ form > h2::after {
     display: none !important;
 }
 
-/* Form Inputs - Updated */
+/* Form Inputs */
 .mppw-form-field__control {
     width: 100% !important;
     max-width: 600px !important;
@@ -182,7 +235,7 @@ form > h2::after {
     z-index: 1 !important;
 }
 
-/* Frequency Dropdown - Updated to hide default arrow */
+/* Frequency Dropdown */
 select.mppw-form-field__control {
     appearance: none !important;
     -webkit-appearance: none !important;
@@ -263,7 +316,7 @@ input[type="date"].mppw-form-field__control {
     display: inline-block !important;
 }
 
-/* Contact Section - Updated */
+/* Contact Section */
 .contact-section {
     margin-top: 30px !important;
     max-width: 800px !important;
@@ -363,11 +416,6 @@ input[type="date"].mppw-form-field__control {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
 }
 
-/* Ensure proper spacing between form fields */
-.mppw-form-field + .mppw-form-field {
-    margin-top: 20px !important;
-}
-
 /* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
@@ -396,24 +444,6 @@ input[type="date"].mppw-form-field__control {
     }
     
     .date-fields-container .mppw-form-field {
-        max-width: 100% !important;
-    }
-
-    .mppw-form-field,
-    .mppw-form-field__control {
-        max-width: 100% !important;
-    }
-    
-    select.mppw-form-field__control {
-        width: 100% !important;
-    }
-
-    .contact-section .mppw-form-field-group {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
-
-    .contact-section .mppw-form-field-group .mppw-form-field {
         max-width: 100% !important;
     }
 }
