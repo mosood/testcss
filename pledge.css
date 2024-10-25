@@ -75,17 +75,26 @@ form > h2::after {
 
 /* Form Fields Layout */
 .mppw-form-field {
+    position: relative !important;
     margin-bottom: 15px !important;
     max-width: 600px !important;
+    clear: both !important;
+}
+
+.mppw-form-field::after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
 }
 
 /* Form Labels */
 .mppw-form-field__label {
+    position: static !important;
+    display: block !important;
     color: var(--brand-navy) !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 5px !important;
-    display: block !important;
 }
 
 /* Form Inputs */
@@ -101,6 +110,46 @@ form > h2::after {
     font-size: 16px !important;
     color: #333 !important;
     line-height: 1.4 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Frequency Dropdown - Updated Styling */
+select.mppw-form-field__control {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+    background-color: white !important;
+    color: #333 !important;
+    cursor: pointer !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    height: 40px !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Select Options */
+select.mppw-form-field__control option {
+    font-size: 16px !important;
+    padding: 8px !important;
+    background: white !important;
+    color: #333 !important;
+}
+
+/* Select hover and focus states */
+select.mppw-form-field__control:hover {
+    border-color: #999 !important;
+}
+
+select.mppw-form-field__control:focus {
+    outline: none !important;
+    border-color: var(--brand-blue) !important;
+    box-shadow: 0 0 0 2px rgba(39, 124, 159, 0.2) !important;
 }
 
 /* Date Fields Container */
@@ -115,29 +164,6 @@ form > h2::after {
 .date-fields-container .mppw-form-field {
     flex: 1 !important;
     max-width: calc(50% - 7.5px) !important;
-}
-
-/* Frequency Dropdown */
-select.mppw-form-field__control {
-    appearance: auto !important;
-    -webkit-appearance: auto !important;
-    -moz-appearance: auto !important;
-    background-color: white !important;
-    color: #333 !important;
-    cursor: pointer !important;
-    padding-right: 30px !important;
-    border: 1px solid #ccc !important;
-}
-
-/* Select hover and focus states */
-select.mppw-form-field__control:hover {
-    border-color: #999 !important;
-}
-
-select.mppw-form-field__control:focus {
-    outline: none !important;
-    border-color: var(--brand-blue) !important;
-    box-shadow: 0 0 0 2px rgba(39, 124, 159, 0.2) !important;
 }
 
 /* Date input specific styling */
