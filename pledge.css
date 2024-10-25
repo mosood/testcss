@@ -10,6 +10,26 @@
     --brand-black: #000000;
 }
 
+/* Hide Progress Elements */
+:host .progress--container,
+:host div[class*="progress--container"],
+:host h2:has(span:only-child:contains("Progress")),
+:host h2[data-text="Progress"],
+:host h2:contains("Progress"),
+:host [class*="progress"],
+:host [id*="progress"],
+.progress--container,
+h2:contains("Progress"),
+[class*="progress--container"],
+div[class*="progress"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
 /* Apply base font to everything */
 * {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
@@ -248,12 +268,6 @@ input[type="date"].mppw-form-field__control {
     order: 2 !important;
 }
 
-/* Hide floating labels in contact section */
-.contact-section .floating-label,
-.contact-section .mppw-form-field > span:not(.mppw-form-field__label) {
-    display: none !important;
-}
-
 /* Contact section horizontal layout */
 .contact-section .mppw-form-field-group {
     display: flex !important;
@@ -300,12 +314,6 @@ input[type="date"].mppw-form-field__control {
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Hide Progress section */
-.progress--container,
-h2:contains("Progress") {
-    display: none !important;
 }
 
 /* Ensure text replacement still works with new font */
