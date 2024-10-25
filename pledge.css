@@ -1,4 +1,18 @@
-/* Campaign Title */
+/* Define brand colors as CSS variables */
+:root {
+    --brand-blue: #277c9f;
+    --brand-navy: #203551;
+    --brand-gold: #f0ab01;
+    --brand-white: #ffffff;
+    --brand-black: #000000;
+}
+
+/* Main Campaign Title */
+.mpp-innerpage h1 {
+    color: var(--brand-navy) !important;
+}
+
+/* Campaign Subtitle */
 .mpp-innerpage > p {
     visibility: hidden;
     position: relative;
@@ -8,6 +22,7 @@
     visibility: visible;
     position: absolute;
     left: 0;
+    color: var(--brand-blue) !important;
 }
 
 /* Create a Pledge heading */
@@ -20,6 +35,8 @@ form > h2::after {
     visibility: visible;
     position: absolute;
     left: 0;
+    color: var(--brand-navy) !important;
+    font-weight: bold;
 }
 
 /* Pledge Details heading */
@@ -32,6 +49,12 @@ form > h3:first-of-type::after {
     visibility: visible;
     position: absolute;
     left: 0;
+    color: var(--brand-blue) !important;
+}
+
+/* Form Labels */
+.mppw-form-field__label {
+    color: var(--brand-navy) !important;
 }
 
 /* Pledge Amount label */
@@ -44,6 +67,7 @@ form > h3:first-of-type::after {
     visibility: visible;
     position: absolute;
     left: 0;
+    color: var(--brand-navy) !important;
 }
 
 /* Total Pledge text */
@@ -56,12 +80,22 @@ form > h3:first-of-type::after {
     visibility: visible;
     position: absolute;
     left: 0;
+    color: var(--brand-blue) !important;
+    font-weight: bold;
+}
+
+/* Amount display */
+.form--row span {
+    color: var(--brand-gold) !important;
+    font-weight: bold;
 }
 
 /* Create Pledge button */
 .submit--btn {
     visibility: hidden;
     position: relative;
+    background-color: var(--brand-blue) !important;
+    border-color: var(--brand-blue) !important;
 }
 .submit--btn::after {
     content: "Create Giving Goal";
@@ -69,10 +103,31 @@ form > h3:first-of-type::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    color: var(--brand-white) !important;
+}
+
+/* Form input fields */
+.mppw-form-field__control {
+    border-color: var(--brand-navy) !important;
+    color: var(--brand-black) !important;
+}
+.mppw-form-field__control:focus {
+    border-color: var(--brand-blue) !important;
+    outline-color: var(--brand-blue) !important;
 }
 
 /* Hide Progress section */
 .progress--container,
 h2:contains("Progress") {
     display: none !important;
+}
+
+/* Contact section heading */
+form h3 {
+    color: var(--brand-navy) !important;
+}
+
+/* Required field asterisks */
+.mppw-form-field__label::after {
+    color: var(--brand-gold) !important;
 }
