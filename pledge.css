@@ -16,6 +16,13 @@
     text-align: left !important;
 }
 
+/* Form Container Styling */
+.mppw-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Main Campaign Title */
 .mpp-innerpage h1 {
     color: var(--brand-blue) !important;
@@ -56,9 +63,19 @@ form > h2::after {
     font-size: 20px;
 }
 
-/* Form section styling */
+/* Pledge Details Section */
+.pledge-details-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+/* Form Fields Layout */
 .mppw-form-field {
     margin-bottom: 15px;
+    max-width: 100%;
 }
 
 /* Form Labels */
@@ -67,6 +84,7 @@ form > h2::after {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 5px;
+    display: block;
 }
 
 /* Form Inputs */
@@ -76,6 +94,47 @@ form > h2::after {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Date Fields Container */
+.date-fields-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Date Input Fields */
+.date-fields-container .mppw-form-field {
+    flex: 1;
+    max-width: calc(50% - 7.5px);
+}
+
+/* Frequency Dropdown */
+select.mppw-form-field__control {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    background-color: white;
+}
+
+/* Total Pledge Display */
+.total-pledge {
+    font-size: 16px;
+    color: var(--brand-navy);
+    margin: 15px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 30px;
+    max-width: 800px;
 }
 
 /* Submit Button Styling */
@@ -83,15 +142,15 @@ form > h2::after {
     background: #1e6180 !important;
     border: none !important;
     border-radius: 8px !important;
-    padding: 10px 20px !important;  /* Reduced padding */
-    font-size: 16px !important;     /* Reduced font size */
+    padding: 10px 20px !important;
+    font-size: 16px !important;
     font-weight: 500 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
-    width: auto !important;         /* Changed from 100% to auto */
-    min-width: 150px !important;    /* Set minimum width */
-    max-width: 200px !important;    /* Reduced max-width */
+    width: auto !important;
+    min-width: 150px !important;
+    max-width: 200px !important;
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
@@ -115,6 +174,17 @@ form > h2::after {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Hide Progress section */
+.progress--container,
+h2:contains("Progress") {
+    display: none !important;
+}
+
+/* Ensure text replacement still works with new font */
+[class*="mppw-"] {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
@@ -131,15 +201,18 @@ form > h2::after {
         font-size: 16px !important;
         padding: 10px 20px !important;
     }
-}
 
-/* Hide Progress section */
-.progress--container,
-h2:contains("Progress") {
-    display: none !important;
-}
-
-/* Ensure text replacement still works with new font */
-[class*="mppw-"] {
-    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+    .pledge-details-section {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .date-fields-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .date-fields-container .mppw-form-field {
+        max-width: 100%;
+    }
 }
