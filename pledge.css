@@ -19,7 +19,7 @@
 /* Main Campaign Title */
 .mpp-innerpage h1 {
     color: var(--brand-blue) !important;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 1000;
     line-height: 1.4;
 }
@@ -36,7 +36,7 @@
     position: absolute;
     left: 0;
     color: var(--brand-blue) !important;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.8;
 }
 
