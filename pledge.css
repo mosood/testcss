@@ -322,8 +322,8 @@ input[type="date"].mppw-form-field__control {
 
 /* Total Pledge Display */
 .total-pledge {
+	color: #277c9f !important;
     font-size: 16px !important;
-    color: #277c9f !important;
     margin: 15px 0 !important;
     padding: 10px !important;
     background: #fff !important;
@@ -439,6 +439,7 @@ input[type="date"].mppw-form-field__control {
     
     .mpp-innerpage > p::after,
     .mpp-card--description {
+		color: #277c9f !important;
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
