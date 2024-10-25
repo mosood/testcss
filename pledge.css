@@ -18,9 +18,9 @@
 
 /* Main Campaign Title */
 .mpp-innerpage h1 {
-    color: var(--brand-navy) !important;
+    color: var(--brand-blue) !important;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 1000;
     line-height: 1.4;
 }
 
