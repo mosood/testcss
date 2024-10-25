@@ -188,7 +188,7 @@ form > h2::after {
     visibility: visible;
     position: absolute;
     left: 0;
-    color: var(--brand-navy) !important;
+    color: #277c9f !important;
     font-weight: 500;
     font-size: 20px;
 }
@@ -216,7 +216,7 @@ form > h2::after {
 .mppw-form-field__label {
     position: relative !important;
     display: block !important;
-    color: var(--brand-navy) !important;
+    color: #277c9f !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 8px !important;
