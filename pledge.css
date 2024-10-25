@@ -14,23 +14,6 @@ h2:not([class]):not([id]) {
     visibility: hidden !important;
 }
 
-/* Backup approach for any h2 containing exactly "Progress" */
-h2:only-of-type,
-h2:not([class]):contains("Progress"),
-h2:not([class]):has(text()[contains(., "Progress")]),
-h2:-webkit-any(:not([class])),
-h2 {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    position: absolute !important;
-    pointer-events: none !important;
-}
 /* Enhanced Progress hiding */
 h2,
 .progress,
