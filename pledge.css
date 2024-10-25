@@ -120,11 +120,11 @@ form > h2::after {
     z-index: 1 !important;
 }
 
-/* Frequency Dropdown - Updated with empty initial state */
+/* Frequency Dropdown - Updated to hide default arrow */
 select.mppw-form-field__control {
-    appearance: auto !important;
-    -webkit-appearance: auto !important;
-    -moz-appearance: auto !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
     background-color: white !important;
     color: #333 !important;
     cursor: pointer !important;
