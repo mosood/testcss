@@ -73,31 +73,37 @@ form > h2::after {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
 }
 
-/* Form Fields Layout */
+/* Form Fields Layout - Updated */
 .mppw-form-field {
     position: relative !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
     max-width: 600px !important;
-    clear: both !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-.mppw-form-field::after {
-    content: "" !important;
-    display: table !important;
-    clear: both !important;
-}
-
-/* Form Labels */
+/* Form Labels - Updated positioning */
 .mppw-form-field__label {
-    position: static !important;
+    position: relative !important;
     display: block !important;
     color: var(--brand-navy) !important;
     font-size: 16px !important;
     font-weight: 400 !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 8px !important;
+    z-index: 2 !important;
+    order: 1 !important;
+    background: transparent !important;
+    transform: none !important;
+    opacity: 1 !important;
 }
 
-/* Form Inputs */
+/* Hide floating labels */
+.floating-label,
+.mppw-form-field > span:not(.mppw-form-field__label) {
+    display: none !important;
+}
+
+/* Form Inputs - Updated */
 .mppw-form-field__control {
     width: 100% !important;
     max-width: 600px !important;
@@ -110,11 +116,11 @@ form > h2::after {
     font-size: 16px !important;
     color: #333 !important;
     line-height: 1.4 !important;
-    position: relative !important;
+    order: 2 !important;
     z-index: 1 !important;
 }
 
-/* Frequency Dropdown - Updated Styling */
+/* Frequency Dropdown - Updated */
 select.mppw-form-field__control {
     appearance: auto !important;
     -webkit-appearance: auto !important;
@@ -127,10 +133,6 @@ select.mppw-form-field__control {
     height: 40px !important;
     width: 100% !important;
     max-width: 600px !important;
-    font-size: 16px !important;
-    line-height: 1.4 !important;
-    position: relative !important;
-    z-index: 1 !important;
 }
 
 /* Select Options */
@@ -236,6 +238,11 @@ h2:contains("Progress") {
 /* Ensure text replacement still works with new font */
 [class*="mppw-"] {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
+}
+
+/* Ensure proper spacing between form fields */
+.mppw-form-field + .mppw-form-field {
+    margin-top: 20px !important;
 }
 
 /* Mobile Responsive Styles */
