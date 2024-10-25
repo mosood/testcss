@@ -10,7 +10,7 @@
     --brand-black: #000000;
 }
 
-/* Hide Progress Elements */
+/* Progress Hide Selectors - More Specific */
 :host .progress--container,
 :host div[class*="progress--container"],
 :host h2:has(span:only-child:contains("Progress")),
@@ -19,9 +19,51 @@
 :host [class*="progress"],
 :host [id*="progress"],
 .progress--container,
-h2:contains("Progress"),
+.progress-bar,
+.progress-container,
 [class*="progress--container"],
-div[class*="progress"] {
+[class*="progress-bar"],
+[class*="progress-container"],
+h2:contains("Progress"),
+div:has(> h2:contains("Progress")),
+h2[data-text="Progress"],
+div[class*="progress"],
+div[id*="progress"],
+div[class*="progress--container"],
+div[class*="progress-bar"],
+div[class*="progress-container"],
+div[role="progressbar"],
+.progress,
+#progress,
+[aria-label*="progress"],
+[aria-label*="Progress"],
+div:has(> .progress),
+div:has(> .progress-bar),
+.mpp-progress,
+.mpp-progress-bar,
+div[class^="progress"],
+div[class*=" progress"],
+div:has(text()[contains(., "pledged of")]) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+}
+
+/* Hide any text containing pledge amounts */
+div:has(text()[contains(., "$")]:contains("Goal")),
+div:contains("pledged of"),
+div:contains("Goal"),
+div[class*="pledge-amount"],
+div[class*="pledge-goal"] {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
