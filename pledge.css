@@ -1,0 +1,78 @@
+/* Campaign Title */
+.mpp-innerpage > p {
+    visibility: hidden;
+    position: relative;
+}
+.mpp-innerpage > p::after {
+    content: "God, where do you want me to be in my giving?";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+
+/* Create a Pledge heading */
+form > h2 {
+    visibility: hidden;
+    position: relative;
+}
+form > h2::after {
+    content: "Set Your Goal";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+
+/* Pledge Details heading */
+form > h3:first-of-type {
+    visibility: hidden;
+    position: relative;
+}
+form > h3:first-of-type::after {
+    content: "My Giving Goal";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+
+/* Pledge Amount label */
+.mppw-form-field__label:has(+ input) {
+    visibility: hidden;
+    position: relative;
+}
+.mppw-form-field__label:has(+ input)::after {
+    content: "Goal Amount";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+
+/* Total Pledge text */
+.form--row strong {
+    visibility: hidden;
+    position: relative;
+}
+.form--row strong::after {
+    content: "Total Giving Goal:";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+
+/* Create Pledge button */
+.submit--btn {
+    visibility: hidden;
+    position: relative;
+}
+.submit--btn::after {
+    content: "Create Giving Goal";
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hide Progress section */
+.progress--container,
+h2:contains("Progress") {
+    display: none !important;
+}
