@@ -177,18 +177,22 @@ mpp-pledge-campaign {
     line-height: 1.8;
 }
 
-/* Create a Pledge heading */
-form > h2 {
+/* Create a Pledge heading - Updated */
+form > h2,
+h2:not([class]):not([id]),
+.pledge-details {
     visibility: hidden;
     position: relative;
     margin-bottom: 20px;
 }
-form > h2::after {
-    content: "Set Your Goal";
+form > h2::after,
+h2:not([class]):not([id])::after,
+.pledge-details::after {
+    content: "My Giving Goal";
     visibility: visible;
     position: absolute;
     left: 0;
-    color: #277c9f !important;
+    color: var(--brand-navy) !important;
     font-weight: 500;
     font-size: 20px;
 }
