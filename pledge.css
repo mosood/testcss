@@ -172,7 +172,7 @@ mpp-pledge-campaign {
     visibility: visible;
     position: absolute;
     left: 0;
-    color: var(--brand-blue) !important;
+    color: #277c9f !important;
     font-size: 15px;
     line-height: 1.8;
 }
