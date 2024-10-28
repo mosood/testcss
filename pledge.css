@@ -10,7 +10,20 @@
     --brand-black: #000000;
 }
 
-/* Target Pledge Details specifically - NEW UPDATE */
+/* Apply base font to everything */
+* {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+    text-align: left !important;
+}
+
+/* Form Container Styling */
+.mppw-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Target Pledge Details specifically */
 #pledgeForm h3,
 form#pledgeForm h3,
 .mppw-component-container h3,
@@ -42,151 +55,6 @@ h3::after {
     width: 100% !important;
 }
 
-/* Progress Hide Selectors */
-h2:not([class]):not([id]) {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* Enhanced Progress hiding */
-h2,
-.progress,
-div[class*="progress"],
-div[id*="progress"],
-[class*="Progress"],
-[id*="Progress"],
-h2:contains("Progress"),
-div:has(> h2:contains("Progress")),
-.mpp-progress,
-.mpp-progress-bar,
-.mpp-innerpage-progress,
-h2:matches([text*="Progress"]),
-h2[text*="Progress"],
-h2:has(text()[contains(., "Progress")]),
-div:has(h2:contains("Progress")),
-div.progress,
-div[class^="progress"],
-div[class*=" progress"],
-div[id^="progress"],
-div[id*=" progress"],
-section:has(h2:contains("Progress")),
-*:has(> h2:contains("Progress")) {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    position: absolute !important;
-    clip: rect(0 0 0 0) !important;
-    clip-path: inset(50%) !important;
-}
-
-/* Target Shadow DOM elements */
-:host,
-:root,
-mpp-pledge-campaign,
-mpp-pledge-campaign::part(*),
-mpp-pledge-campaign::shadow-part(*) {
-    & h2,
-    & div,
-    & section,
-    & article,
-    & span {
-        &:has(text()[contains(., "Progress")]),
-        &:has(text()[contains(., "pledged of")]),
-        &:has(text()[contains(., "Goal")]),
-        &[class*="progress"],
-        &[id*="progress"],
-        &[class*="Progress"],
-        &[id*="Progress"] {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            overflow: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-            position: absolute !important;
-            clip: rect(0 0 0 0) !important;
-            clip-path: inset(50%) !important;
-        }
-    }
-}
-
-/* Target specific shadow elements */
-mpp-pledge-campaign::shadow-part(progress),
-mpp-pledge-campaign::shadow-part(progress-container),
-mpp-pledge-campaign::part(progress),
-mpp-pledge-campaign::part(progress-container) {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    opacity: 0 !important;
-}
-
-/* Directly target the shadow root */
-mpp-pledge-campaign {
-    & > *,
-    &::shadow,
-    &::part(*) {
-        & .progress,
-        & .progress-bar,
-        & .progress-container,
-        & [class*="progress"],
-        & [id*="progress"],
-        & h2:has(text()[contains(., "Progress")]),
-        & div:has(text()[contains(., "pledged of")]),
-        & div:has(text()[contains(., "Goal")]) {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-            opacity: 0 !important;
-        }
-    }
-}
-
-/* Override any potential visibility settings */
-[class*="progress"],
-[id*="progress"],
-[class*="Progress"],
-[id*="Progress"],
-[aria-label*="progress"],
-[aria-label*="Progress"],
-.progress,
-.progress-bar,
-.progress-container,
-.mpp-progress,
-.mpp-progress-bar,
-.mpp-innerpage-progress {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* Apply base font to everything */
-* {
-    font-family: 'Source Sans Pro', Arial, sans-serif !important;
-    text-align: left !important;
-}
-
-/* Form Container Styling */
-.mppw-form {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Main Campaign Title */
 .mpp-innerpage h1 {
     color: #277c9f !important;
@@ -201,6 +69,7 @@ mpp-pledge-campaign {
     position: relative;
     margin-bottom: 20px;
 }
+
 .mpp-innerpage > p::after {
     content: "God, where do you want me to be in my giving?";
     visibility: visible;
@@ -211,10 +80,40 @@ mpp-pledge-campaign {
     line-height: 1.8;
 }
 
+/* Hide all progress-related elements */
+h2:not([class]):not([id]),
+.progress,
+div[class*="progress"],
+div[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+h2:contains("Progress"),
+div:has(> h2:contains("Progress")),
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress,
+[class*="progress"],
+[id*="progress"],
+[aria-label*="progress"],
+[aria-label*="Progress"],
+.progress-bar,
+.progress-container {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+}
+
 /* Form Labels */
 label[for="InstallmentAmount"],
-.mppw-form-field__label,
-label:contains("Pledge Amount"),
 .mppw-form-field__label[for="InstallmentAmount"] {
     visibility: hidden !important;
     position: relative !important;
@@ -223,16 +122,9 @@ label:contains("Pledge Amount"),
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 8px !important;
-    z-index: 2 !important;
-    order: 1 !important;
-    background: transparent !important;
-    transform: none !important;
-    opacity: 1 !important;
 }
 
 label[for="InstallmentAmount"]::after,
-.mppw-form-field__label::after,
-label:contains("Pledge Amount")::after,
 .mppw-form-field__label[for="InstallmentAmount"]::after {
     content: "Goal Amount*" !important;
     visibility: visible !important;
@@ -263,49 +155,67 @@ label:contains("Pledge Amount")::after,
     font-size: 16px !important;
     color: #333 !important;
     line-height: 1.4 !important;
-    order: 2 !important;
-    z-index: 1 !important;
 }
 
-/* Hide Frequency Label in Select Box */
-select[name="Frequency"] option:first-child,
+/* Frequency Label and Select Styling */
+label[for="Frequency"],
+.mppw-form-field__label:not([for="InstallmentAmount"]),
+.mppw-form-field label,
+.form-col label,
+div[class*="form"] label {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+}
+
+.form--row label,
+.form-col label,
+div[class*="form-field"] > label:not(:first-child),
+select[name="Frequency"] + label,
+label + select[name="Frequency"],
+select#Frequency + label,
+label + select#Frequency {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+.mppw-form-field:has(select[name="Frequency"])::before {
+    content: "Select Frequency*" !important;
+    display: block !important;
+    color: #277c9f !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px !important;
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+}
+
+/* Hide default select placeholder */
+select[name="Frequency"] option[value=""],
 select#Frequency option[value=""],
 select.mppw-form-field__control option:first-child {
     display: none !important;
 }
 
-/* Style the Frequency Label */
-label[for="Frequency"],
-.mppw-form-field__label,
-label.mppw-form-field__label {
-    visibility: hidden !important;
-    position: relative !important;
-    display: block !important;
-    margin-bottom: 8px !important;
-}
-
-label[for="Frequency"]::after,
-.mppw-form-field__label::after {
-    content: "Select Frequency*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: #277c9f !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-}
-
-/* Style the select dropdown */
+/* Style select dropdown */
+select[name="Frequency"],
+select#Frequency,
 select.mppw-form-field__control {
-    color: #333 !important;
-    font-size: 16px !important;
-    padding: 8px 12px !important;
     width: 100% !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
     background-color: white !important;
+    font-size: 16px !important;
+    color: #333 !important;
     appearance: auto !important;
+    margin-top: 0 !important;
 }
 
 /* Total Pledge Display */
