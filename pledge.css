@@ -215,15 +215,7 @@ mpp-pledge-campaign {
 label[for="InstallmentAmount"],
 .mppw-form-field__label,
 label:contains("Pledge Amount"),
-.mppw-form-field__label[for="InstallmentAmount"],
-/* New frequency label selectors */
-label[for="Frequency"],
-select[name="Frequency"] + label,
-.mppw-form-field__label[for="Frequency"],
-div[class*="form-field"] > label:contains("Frequency"),
-div[class*="form-field"] label[for="Frequency"],
-.form--row label:contains("Frequency"),
-label:contains("Select Frequency") {
+.mppw-form-field__label[for="InstallmentAmount"] {
     visibility: hidden !important;
     position: relative !important;
     display: block !important;
@@ -238,8 +230,9 @@ label:contains("Select Frequency") {
     opacity: 1 !important;
 }
 
-/* Only apply Goal Amount content to InstallmentAmount label */
 label[for="InstallmentAmount"]::after,
+.mppw-form-field__label::after,
+label:contains("Pledge Amount")::after,
 .mppw-form-field__label[for="InstallmentAmount"]::after {
     content: "Goal Amount*" !important;
     visibility: visible !important;
