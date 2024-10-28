@@ -232,7 +232,7 @@ label:contains("Pledge Amount"),
 
 label[for="InstallmentAmount"]::after,
 .mppw-form-field__label::after,
-label:contains("Pledge Amount")::after,
+label:contains("Goal Amount")::after,
 .mppw-form-field__label[for="InstallmentAmount"]::after {
     content: "Goal Amount*" !important;
     visibility: visible !important;
