@@ -211,6 +211,40 @@ mpp-pledge-campaign {
     line-height: 1.8;
 }
 
+/* Form Labels - UPDATED WITH BOTH CHANGES */
+/* Goal Amount Label */
+label[for="InstallmentAmount"],
+.mppw-form-field__label,
+label:contains("Pledge Amount"),
+.mppw-form-field__label[for="InstallmentAmount"] {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+    color: #277c9f !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px !important;
+    z-index: 2 !important;
+    order: 1 !important;
+    background: transparent !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+label[for="InstallmentAmount"]::after,
+.mppw-form-field__label::after,
+label:contains("Pledge Amount")::after,
+.mppw-form-field__label[for="InstallmentAmount"]::after {
+    content: "Goal Amount*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: #277c9f !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
 /* Frequency Select Label */
 select#Frequency + label.mppw-form-field__label,
 label[for="Frequency"],
