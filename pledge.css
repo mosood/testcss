@@ -245,28 +245,29 @@ label:contains("Pledge Amount")::after,
     font-weight: 400 !important;
 }
 
-/* Frequency Select Label */
-select#Frequency + label.mppw-form-field__label,
-label[for="Frequency"],
-.mppw-form-field__label:contains("Select Frequency") {
+/* Frequency Select Label - More specific targeting */
+#Frequency,
+select#Frequency,
+select.mppw-form-field__control[id="Frequency"],
+.mppw-form-field__control[name="Frequency"] {
     visibility: hidden !important;
     position: relative !important;
-    display: block !important;
-    color: #277c9f !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    margin-bottom: 8px !important;
-    z-index: 2 !important;
-    order: 1 !important;
-    background: transparent !important;
-    transform: none !important;
-    opacity: 1 !important;
 }
 
-select#Frequency + label.mppw-form-field__label::after,
-label[for="Frequency"]::after,
-.mppw-form-field__label:contains("Select Frequency")::after {
+option[value=""],
+option:first-child {
     content: "How Often?" !important;
+}
+
+.mppw-form-field .mppw-form-field__control#Frequency + label,
+.mppw-form-field label.mppw-form-field__label[for="Frequency"] {
+    visibility: hidden !important;
+    position: relative !important;
+}
+
+.mppw-form-field .mppw-form-field__control#Frequency + label::after,
+.mppw-form-field label.mppw-form-field__label[for="Frequency"]::after {
+    content: "How Often?*" !important;
     visibility: visible !important;
     position: absolute !important;
     left: 0 !important;
