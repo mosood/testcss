@@ -178,24 +178,36 @@ mpp-pledge-campaign {
     line-height: 1.8;
 }
 
-/* Create a Pledge heading - Updated */
+/* Create a Pledge heading - Updated with more specific selectors */
 form > h2,
 h2:not([class]):not([id]),
-.pledge-details {
-    visibility: hidden;
-    position: relative;
-    margin-bottom: 20px;
+.pledge-details,
+h2.pledge-details,
+div.pledge-details,
+[class*="pledge-details"],
+[id*="pledge-details"],
+h2:contains("Pledge Details") {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
 }
+
 form > h2::after,
 h2:not([class]):not([id])::after,
-.pledge-details::after {
-    content: "My Giving Goal";
-    visibility: visible;
-    position: absolute;
-    left: 0;
+.pledge-details::after,
+h2.pledge-details::after,
+div.pledge-details::after,
+[class*="pledge-details"]::after,
+[id*="pledge-details"]::after,
+h2:contains("Pledge Details")::after {
+    content: "My Giving Goal" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
     color: #277c9f !important;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-transform: none !important;
 }
 
 /* Pledge Details Section */
