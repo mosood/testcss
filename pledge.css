@@ -10,12 +10,45 @@
     --brand-black: #000000;
 }
 
+/* Target Pledge Details specifically - NEW UPDATE */
+#pledgeForm h3,
+form#pledgeForm h3,
+.mppw-component-container h3,
+#pledgeCampaignWrapper h3,
+h3 {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#pledgeForm h3::after,
+form#pledgeForm h3::after,
+.mppw-component-container h3::after,
+#pledgeCampaignWrapper h3::after,
+h3::after {
+    content: "My Giving Goal" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: #277c9f !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-transform: none !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Progress Hide Selectors */
 h2:not([class]):not([id]) {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* Enhanced Progress hiding - keep unchanged */
+/* Enhanced Progress hiding */
 h2,
 .progress,
 div[class*="progress"],
@@ -52,7 +85,7 @@ section:has(h2:contains("Progress")),
     clip-path: inset(50%) !important;
 }
 
-/* Target Shadow DOM elements - keep unchanged */
+/* Target Shadow DOM elements */
 :host,
 :root,
 mpp-pledge-campaign,
@@ -86,7 +119,7 @@ mpp-pledge-campaign::shadow-part(*) {
     }
 }
 
-/* Target specific shadow elements - keep unchanged */
+/* Target specific shadow elements */
 mpp-pledge-campaign::shadow-part(progress),
 mpp-pledge-campaign::shadow-part(progress-container),
 mpp-pledge-campaign::part(progress),
@@ -98,7 +131,7 @@ mpp-pledge-campaign::part(progress-container) {
     opacity: 0 !important;
 }
 
-/* Directly target the shadow root - keep unchanged */
+/* Directly target the shadow root */
 mpp-pledge-campaign {
     & > *,
     &::shadow,
@@ -120,7 +153,7 @@ mpp-pledge-campaign {
     }
 }
 
-/* Override any potential visibility settings - keep unchanged */
+/* Override any potential visibility settings */
 [class*="progress"],
 [id*="progress"],
 [class*="Progress"],
@@ -162,7 +195,7 @@ mpp-pledge-campaign {
     line-height: 1.4;
 }
 
-/* Campaign Subtitle - Updated */
+/* Campaign Subtitle */
 .mpp-innerpage > p {
     visibility: hidden;
     position: relative;
@@ -177,48 +210,8 @@ mpp-pledge-campaign {
     font-size: 15px;
     line-height: 1.8;
 }
-/* Create a Pledge heading - Updated for h3 */
-.mpp-innerpage h3,
-h3:contains("Pledge Details"),
-h3.pledge-details,
-h3:not([class]):not([id]) {
-    visibility: hidden !important;
-    position: relative !important;
-    margin-bottom: 20px !important;
-    display: block !important;
-    width: auto !important;
-    height: auto !important;
-}
 
-.mpp-innerpage h3::after,
-h3:contains("Pledge Details")::after,
-h3.pledge-details::after,
-h3:not([class]):not([id])::after {
-    content: "My Giving Goal" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: #277c9f !important;
-    font-weight: 500 !important;
-    font-size: 20px !important;
-    text-transform: none !important;
-    display: block !important;
-    width: 100% !important;
-}
-
-
-/* Pledge Details Section */
-.pledge-details-section {
-    background: #f8f9fa !important;
-    padding: 20px !important;
-    border-radius: 8px !important;
-    margin-bottom: 25px !important;
-    max-width: 600px !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
-}
-
-/* Form Labels - Updated */
+/* Form Labels */
 .mppw-form-field__label {
     position: relative !important;
     display: block !important;
@@ -231,42 +224,6 @@ h3:not([class]):not([id])::after {
     background: transparent !important;
     transform: none !important;
     opacity: 1 !important;
-}
-
-/* Pledge Amount Label Update */
-label[for="pledgeAmount"],
-.mppw-form-field__label:contains("Pledge") {
-    visibility: hidden;
-    position: relative;
-}
-label[for="pledgeAmount"]::after,
-.mppw-form-field__label:contains("Pledge")::after {
-    content: "Goal Amount";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #277c9f !important;
-}
-
-/* Date Labels Update */
-label[for="pledgeStartDate"],
-label[for="pledgeEndDate"] {
-    visibility: hidden;
-    position: relative;
-}
-label[for="pledgeStartDate"]::after {
-    content: "Giving Goal Start Date";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #277c9f !important;
-}
-label[for="pledgeEndDate"]::after {
-    content: "Giving Goal End Date";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #277c9f !important;
 }
 
 /* Hide floating labels */
@@ -292,10 +249,9 @@ label[for="pledgeEndDate"]::after {
     z-index: 1 !important;
 }
 
-/* Total Pledge Display - Updated */
+/* Total Pledge Display */
 .total-pledge {
-    visibility: hidden;
-    position: relative;
+    color: #277c9f !important;
     font-size: 16px !important;
     margin: 15px 0 !important;
     padding: 10px !important;
@@ -303,15 +259,14 @@ label[for="pledgeEndDate"]::after {
     border-radius: 4px !important;
     display: inline-block !important;
 }
-.total-pledge::after {
-    content: "Total Giving Goal";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #277c9f !important;
+
+/* Contact Section */
+.contact-section {
+    margin-top: 30px !important;
+    max-width: 800px !important;
 }
 
-/* Submit Button - Updated */
+/* Submit Button Styling */
 .submit--btn {
     background: #1e6180 !important;
     border: none !important;
@@ -328,18 +283,6 @@ label[for="pledgeEndDate"]::after {
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
-    visibility: hidden !important;
-    position: relative !important;
-}
-
-.submit--btn::after {
-    content: "Create Giving Goal" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    color: white !important;
-    width: 100% !important;
 }
 
 .submit--btn:hover {
@@ -359,8 +302,9 @@ label[for="pledgeEndDate"]::after {
         line-height: 1.6 !important;
     }
     
-    .submit--btn::after {
+    .submit--btn {
         font-size: 16px !important;
+        padding: 10px 20px !important;
     }
 
     .pledge-details-section {
