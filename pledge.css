@@ -9,12 +9,13 @@
     --brand-white: #ffffff;
     --brand-black: #000000;
 }
+
 h2:not([class]):not([id]) {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* Enhanced Progress hiding */
+/* Enhanced Progress hiding - keep unchanged */
 h2,
 .progress,
 div[class*="progress"],
@@ -51,7 +52,7 @@ section:has(h2:contains("Progress")),
     clip-path: inset(50%) !important;
 }
 
-/* Target Shadow DOM elements */
+/* Target Shadow DOM elements - keep unchanged */
 :host,
 :root,
 mpp-pledge-campaign,
@@ -85,7 +86,7 @@ mpp-pledge-campaign::shadow-part(*) {
     }
 }
 
-/* Target specific shadow elements */
+/* Target specific shadow elements - keep unchanged */
 mpp-pledge-campaign::shadow-part(progress),
 mpp-pledge-campaign::shadow-part(progress-container),
 mpp-pledge-campaign::part(progress),
@@ -97,7 +98,7 @@ mpp-pledge-campaign::part(progress-container) {
     opacity: 0 !important;
 }
 
-/* Directly target the shadow root */
+/* Directly target the shadow root - keep unchanged */
 mpp-pledge-campaign {
     & > *,
     &::shadow,
@@ -119,7 +120,7 @@ mpp-pledge-campaign {
     }
 }
 
-/* Override any potential visibility settings */
+/* Override any potential visibility settings - keep unchanged */
 [class*="progress"],
 [id*="progress"],
 [class*="Progress"],
@@ -161,7 +162,7 @@ mpp-pledge-campaign {
     line-height: 1.4;
 }
 
-/* Campaign Subtitle */
+/* Campaign Subtitle - Updated */
 .mpp-innerpage > p {
     visibility: hidden;
     position: relative;
@@ -192,7 +193,7 @@ h2:not([class]):not([id])::after,
     visibility: visible;
     position: absolute;
     left: 0;
-    color: var(--brand-navy) !important;
+    color: #277c9f !important;
     font-weight: 500;
     font-size: 20px;
 }
@@ -207,16 +208,7 @@ h2:not([class]):not([id])::after,
     box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
 }
 
-/* Form Fields Layout */
-.mppw-form-field {
-    position: relative !important;
-    margin-bottom: 20px !important;
-    max-width: 600px !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* Form Labels */
+/* Form Labels - Updated */
 .mppw-form-field__label {
     position: relative !important;
     display: block !important;
@@ -229,6 +221,42 @@ h2:not([class]):not([id])::after,
     background: transparent !important;
     transform: none !important;
     opacity: 1 !important;
+}
+
+/* Pledge Amount Label Update */
+label[for="pledgeAmount"],
+.mppw-form-field__label:contains("Pledge") {
+    visibility: hidden;
+    position: relative;
+}
+label[for="pledgeAmount"]::after,
+.mppw-form-field__label:contains("Pledge")::after {
+    content: "Goal Amount";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    color: #277c9f !important;
+}
+
+/* Date Labels Update */
+label[for="pledgeStartDate"],
+label[for="pledgeEndDate"] {
+    visibility: hidden;
+    position: relative;
+}
+label[for="pledgeStartDate"]::after {
+    content: "Giving Goal Start Date";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    color: #277c9f !important;
+}
+label[for="pledgeEndDate"]::after {
+    content: "Giving Goal End Date";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    color: #277c9f !important;
 }
 
 /* Hide floating labels */
@@ -254,79 +282,10 @@ h2:not([class]):not([id])::after,
     z-index: 1 !important;
 }
 
-/* Frequency Dropdown */
-select.mppw-form-field__control {
-    appearance: none !important;
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    background-color: white !important;
-    color: #333 !important;
-    cursor: pointer !important;
-    padding: 8px 12px !important;
-    border: 1px solid #ccc !important;
-    height: 40px !important;
-    width: 100% !important;
-    max-width: 600px !important;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important;
-    background-position: right 12px center !important;
-    padding-right: 40px !important;
-}
-
-/* Hide default select text */
-select.mppw-form-field__control option[value=""] {
-    display: none !important;
-}
-
-/* Style for initial state of select */
-select.mppw-form-field__control:invalid,
-select.mppw-form-field__control option:first-child {
-    color: transparent !important;
-}
-
-/* Select Options */
-select.mppw-form-field__control option {
-    font-size: 16px !important;
-    padding: 8px !important;
-    background: white !important;
-    color: #333 !important;
-}
-
-/* Select hover and focus states */
-select.mppw-form-field__control:hover {
-    border-color: #999 !important;
-}
-
-select.mppw-form-field__control:focus {
-    outline: none !important;
-    border-color: var(--brand-blue) !important;
-    box-shadow: 0 0 0 2px rgba(39, 124, 159, 0.2) !important;
-}
-
-/* Date Fields Container */
-.date-fields-container {
-    display: flex !important;
-    gap: 15px !important;
-    margin-bottom: 15px !important;
-    max-width: 600px !important;
-}
-
-/* Date Input Fields */
-.date-fields-container .mppw-form-field {
-    flex: 1 !important;
-    max-width: calc(50% - 7.5px) !important;
-}
-
-/* Date input specific styling */
-input[type="date"].mppw-form-field__control {
-    padding: 6px 10px !important;
-    height: 40px !important;
-    min-height: 40px !important;
-}
-
-/* Total Pledge Display */
+/* Total Pledge Display - Updated */
 .total-pledge {
-	color: #277c9f !important;
+    visibility: hidden;
+    position: relative;
     font-size: 16px !important;
     margin: 15px 0 !important;
     padding: 10px !important;
@@ -334,66 +293,15 @@ input[type="date"].mppw-form-field__control {
     border-radius: 4px !important;
     display: inline-block !important;
 }
-
-/* Contact Section */
-.contact-section {
-    margin-top: 30px !important;
-    max-width: 800px !important;
-}
-
-/* Contact Fields Layout */
-.contact-section .mppw-form-field {
-    position: relative !important;
-    margin-bottom: 20px !important;
-    max-width: 600px !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* Contact Fields Labels */
-.contact-section .mppw-form-field__label {
-    position: relative !important;
-    display: block !important;
+.total-pledge::after {
+    content: "Total Giving Goal";
+    visibility: visible;
+    position: absolute;
+    left: 0;
     color: #277c9f !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    margin-bottom: 8px !important;
-    z-index: 2 !important;
-    order: 1 !important;
-    background: transparent !important;
-    transform: none !important;
-    opacity: 1 !important;
-    text-align: left !important;
 }
 
-/* Contact Fields Inputs */
-.contact-section .mppw-form-field__control {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 40px !important;
-    padding: 8px 12px !important;
-    border: 1px solid #ccc !important;
-    border-radius: 4px !important;
-    background-color: white !important;
-    box-sizing: border-box !important;
-    font-size: 16px !important;
-    color: #333 !important;
-    line-height: 1.4 !important;
-    order: 2 !important;
-}
-
-/* Contact section horizontal layout */
-.contact-section .mppw-form-field-group {
-    display: flex !important;
-    gap: 15px !important;
-    margin-bottom: 15px !important;
-}
-
-.contact-section .mppw-form-field-group .mppw-form-field {
-    flex: 1 !important;
-}
-
-/* Submit Button Styling */
+/* Submit Button - Updated */
 .submit--btn {
     background: #1e6180 !important;
     border: none !important;
@@ -410,6 +318,18 @@ input[type="date"].mppw-form-field__control {
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
+    visibility: hidden !important;
+    position: relative !important;
+}
+
+.submit--btn::after {
+    content: "Create Giving Goal" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: white !important;
+    width: 100% !important;
 }
 
 .submit--btn:hover {
@@ -418,39 +338,19 @@ input[type="date"].mppw-form-field__control {
     transform: translateY(-1px) !important;
 }
 
-/* Card Description */
-.mpp-card--description {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #333;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure text replacement still works with new font */
-[class*="mppw-"] {
-    font-family: 'Source Sans Pro', Arial, sans-serif !important;
-}
-
 /* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
         font-size: 22px !important;
     }
     
-    .mpp-innerpage > p::after,
-    .mpp-card--description {
-		color: #277c9f !important;
+    .mpp-innerpage > p::after {
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
     
-    .submit--btn {
+    .submit--btn::after {
         font-size: 16px !important;
-        padding: 10px 20px !important;
     }
 
     .pledge-details-section {
