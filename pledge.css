@@ -214,7 +214,7 @@ mpp-pledge-campaign {
 /* Form Labels */
 label[for="InstallmentAmount"],
 .mppw-form-field__label,
-label:contains("Pledge Amount"),
+label:contains("Goal Amount"),
 .mppw-form-field__label[for="InstallmentAmount"] {
     visibility: hidden !important;
     position: relative !important;
