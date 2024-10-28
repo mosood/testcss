@@ -245,14 +245,17 @@ label:contains("Pledge Amount")::after,
     font-weight: 400 !important;
 }
 
-/* Frequency Select Label - Fix */
-.mppw-form-field label.mppw-form-field__label {
+/* Frequency Select Label - Fixed to target only frequency */
+.mppw-form-field .mppw-form-field__control#Frequency + .mppw-form-field__label,
+.mppw-form-field__label[for="Frequency"] {
     visibility: hidden !important;
     position: relative !important;
     display: block !important;
+    margin-bottom: 8px !important;
 }
 
-.mppw-form-field label.mppw-form-field__label::after {
+.mppw-form-field .mppw-form-field__control#Frequency + .mppw-form-field__label::after,
+.mppw-form-field__label[for="Frequency"]::after {
     content: "How Often?*" !important;
     visibility: visible !important;
     position: absolute !important;
@@ -261,12 +264,6 @@ label:contains("Pledge Amount")::after,
     color: #277c9f !important;
     font-size: 16px !important;
     font-weight: 400 !important;
-}
-
-/* Keep select element visible */
-select.mppw-form-field__control {
-    visibility: visible !important;
-    display: block !important;
 }
 
 /* Hide floating labels */
