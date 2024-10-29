@@ -332,7 +332,48 @@ label:contains("Goal Amount")::after,
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+/* Form Field Labels - Update for all form labels */
+label.mppw-form-field__label[for="LastJames"],
+label.mppw-form-field__label[for="Email"],
+label.mppw-form-field__label[for="MobilePhoneNumber"] {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+}
 
+/* Individual label updates */
+label.mppw-form-field__label[for="LastJames"]::after {
+    content: "Last Name*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+label.mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+label.mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
 /* Hide floating labels */
 .floating-label,
 .mppw-form-field > span:not(.mppw-form-field__label) {
