@@ -1,4 +1,4 @@
-]/* Import font */
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
 
 /* Define brand colors and base styles */
@@ -339,10 +339,19 @@ label:contains("Goal Amount"),
     opacity: 1 !important;
 }
 
+/* Ensure Original Label is Hidden */
+label[for="InstallmentAmount"],
+.mppw-form-field__label {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+    height: 0 !important;
+    width: 100%;
+}
+
+/* Insert 'Goal Amount*' as Replacement Text */
 label[for="InstallmentAmount"]::after,
-.mppw-form-field__label::after,
-label:contains("Goal Amount")::after,
-.mppw-form-field__label[for="InstallmentAmount"]::after {
+.mppw-form-field__label::after {
     content: "Goal Amount*" !important;
     visibility: visible !important;
     position: absolute !important;
@@ -351,13 +360,15 @@ label:contains("Goal Amount")::after,
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
+    line-height: 1.2;
 }
 
-/* Hide floating labels */
+/* Hide Floating Labels if Present */
 .floating-label,
 .mppw-form-field > span:not(.mppw-form-field__label) {
     display: none !important;
 }
+
 
 /* Form Inputs */
 .mppw-form-field__control {
