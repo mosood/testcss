@@ -65,6 +65,61 @@ h3:not(#contactBlankForm > h3)::after {
     display: block !important;
     width: 100% !important;
 }
+
+/* Contact Form Input Labels - NEW */
+#contactBlankForm .mppw-form-field__label[for="FirstName"],
+#contactBlankForm .mppw-form-field__label[for="LastName"],
+#contactBlankForm .mppw-form-field__label[for="Email"],
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"] {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
+    content: "First Name*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
+    content: "Last Name*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
 /* Progress Hide Selectors */
 h2:not([class]):not([id]) {
     display: none !important;
@@ -137,39 +192,6 @@ label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-}
-
-/* Frequency Select Styling - NEW */
-select#Frequency + label.mppw-form-field__label {
-    visibility: hidden !important;
-    position: relative !important;
-    display: block !important;
-}
-
-select#Frequency + label.mppw-form-field__label::after {
-    content: "How Often?*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Style placeholder option */
-select#Frequency option[value=""] {
-    display: none !important;
-}
-
-/* Set default text when nothing selected */
-select#Frequency:invalid {
-    color: #666 !important;
-}
-
-select#Frequency:invalid::before {
-    content: "How Often?" !important;
-    visibility: visible !important;
 }
 
 /* Target Shadow DOM elements */
@@ -330,48 +352,7 @@ label:contains("Goal Amount")::after,
     font-size: 14px !important;
     font-weight: 400 !important;
 }
-/* Form Field Labels - Update for all form labels */
-label.mppw-form-field__label[for="LastJames"],
-label.mppw-form-field__label[for="Email"],
-label.mppw-form-field__label[for="MobilePhoneNumber"] {
-    visibility: hidden !important;
-    position: relative !important;
-    display: block !important;
-}
 
-/* Individual label updates */
-label.mppw-form-field__label[for="LastJames"]::after {
-    content: "Last Name*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-label.mppw-form-field__label[for="Email"]::after {
-    content: "Email*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-label.mppw-form-field__label[for="MobilePhoneNumber"]::after {
-    content: "Mobile Phone" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
 /* Hide floating labels */
 .floating-label,
 .mppw-form-field > span:not(.mppw-form-field__label) {
@@ -444,26 +425,4 @@ label.mppw-form-field__label[for="MobilePhoneNumber"]::after {
     }
     
     .mpp-innerpage > p::after {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-    }
-    
-    .submit--btn {
-        font-size: 16px !important;
-        padding: 10px 20px !important;
-    }
-
-    .pledge-details-section {
-        padding: 15px !important;
-        max-width: 100% !important;
-    }
-    
-    .date-fields-container {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
-    
-    .date-fields-container .mppw-form-field {
-        max-width: 100% !important;
-    }
-}
+        font-size: 16px
