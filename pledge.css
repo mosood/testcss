@@ -8,15 +8,14 @@
     --brand-gold: #f0ab01;
     --brand-white: #ffffff;
     --brand-black: #000000;
-    --label-blue: rgb(107, 156, 191);
 }
 
 /* Target Pledge Details specifically - NEW UPDATE */
-#pledgeForm h3,
-form#pledgeForm h3,
-.mppw-component-container h3,
-#pledgeCampaignWrapper h3,
-h3 {
+#pledgeForm h3:not(#contactBlankForm > h3),
+form#pledgeForm h3:not(#contactBlankForm > h3),
+.mppw-component-container h3:not(#contactBlankForm > h3),
+#pledgeCampaignWrapper h3:not(#contactBlankForm > h3),
+h3:not(#contactBlankForm > h3) {
     visibility: hidden !important;
     position: relative !important;
     margin-bottom: 20px !important;
@@ -25,11 +24,11 @@ h3 {
     height: auto !important;
 }
 
-#pledgeForm h3::after,
-form#pledgeForm h3::after,
-.mppw-component-container h3::after,
-#pledgeCampaignWrapper h3::after,
-h3::after {
+#pledgeForm h3:not(#contactBlankForm > h3)::after,
+form#pledgeForm h3:not(#contactBlankForm > h3)::after,
+.mppw-component-container h3:not(#contactBlankForm > h3)::after,
+#pledgeCampaignWrapper h3:not(#contactBlankForm > h3)::after,
+h3:not(#contactBlankForm > h3)::after {
     content: "My Giving Goal" !important;
     visibility: visible !important;
     position: absolute !important;
@@ -42,9 +41,9 @@ h3::after {
     display: block !important;
     width: 100% !important;
 }
+
 /* Contact Section Heading - NEW */
-#contactBlankForm h3,
-div[id="contactBlankForm"] h3 {
+#contactBlankForm > h3 {
     visibility: hidden !important;
     position: relative !important;
     margin-bottom: 20px !important;
@@ -53,8 +52,7 @@ div[id="contactBlankForm"] h3 {
     height: auto !important;
 }
 
-#contactBlankForm h3::after,
-div[id="contactBlankForm"] h3::after {
+#contactBlankForm > h3::after {
     content: "Contact" !important;
     visibility: visible !important;
     position: absolute !important;
