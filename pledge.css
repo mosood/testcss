@@ -399,7 +399,7 @@ label[for="InstallmentAmount"]::after {
 /* Ensure Total Giving Goal and Value Align Properly */
 .form--row {
     display: flex;
-    align-items: center;  /* Align text and value vertically */
+    align-items: left;  /* Align text and value vertically */
     gap: 8px;  /* Space between the label and value */
 }
 
