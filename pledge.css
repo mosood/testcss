@@ -1,4 +1,4 @@
-]/* Import font */
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
 
 /* Define brand colors and base styles */
@@ -64,6 +64,60 @@ h3:not(#contactBlankForm > h3)::after {
     text-transform: none !important;
     display: block !important;
     width: 100% !important;
+}
+
+/* Contact Form Input Labels - NEW */
+#contactBlankForm .mppw-form-field__label[for="FirstName"],
+#contactBlankForm .mppw-form-field__label[for="LastName"],
+#contactBlankForm .mppw-form-field__label[for="Email"],
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"] {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
+    content: "First Name*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
+    content: "Last Name*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
 }
 
 /* Progress Hide Selectors */
@@ -322,23 +376,15 @@ label:contains("Goal Amount")::after,
     z-index: 1 !important;
 }
 
-/* Total Pledge Text Update */
-strong:contains("Total Pledge"),
-#TotalPledge + strong {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-strong:contains("Total Pledge")::after,
-#TotalPledge + strong::after {
-    content: "Total Giving Goal:" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
+/* Total Pledge Display */
+.total-pledge {
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
-    font-weight: 400 !important;
+    margin: 15px 0 !important;
+    padding: 10px !important;
+    background: #fff !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
 }
 
 /* Contact Section */
