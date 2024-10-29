@@ -1,0 +1,144 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
+
+/* Define brand colors and base styles */
+:root {
+    --brand-blue: #277c9f;
+    --brand-navy: #203551;
+    --brand-gold: #f0ab01;
+    --brand-white: #ffffff;
+    --brand-black: #000000;
+}
+
+/* Target Pledge Details */
+#pledgeForm h3:not(#contactBlankForm > h3),
+form#pledgeForm h3:not(#contactBlankForm > h3),
+.mppw-component-container h3:not(#contactBlankForm > h3),
+#pledgeCampaignWrapper h3:not(#contactBlankForm > h3),
+h3:not(#contactBlankForm > h3) {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#pledgeForm h3::after,
+.mppw-component-container h3::after,
+#pledgeCampaignWrapper h3::after,
+h3::after {
+    content: "My Giving Goal" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: #277c9f !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+}
+
+/* Contact Section Heading */
+#contactBlankForm > h3 {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#contactBlankForm > h3::after {
+    content: "Contact" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: #277c9f !important;
+    font-size: 20px !important;
+}
+
+/* Progress Hide Selectors */
+h2:not([class]):not([id]),
+h2:has(text()[contains(., "Progress")]),
+.progress,
+.mpp-progress {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    clip-path: inset(50%) !important;
+}
+
+/* Date Input Labels */
+label.mppw-form-field__alt-label .mppw-form-field__alt-label-content {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal Start Date*" !important;
+    color: rgb(107, 156, 191) !important;
+}
+
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal End Date*" !important;
+    color: rgb(107, 156, 191) !important;
+}
+
+/* Form Inputs */
+.mppw-form-field__control {
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+
+/* Submit Button */
+.submit--btn {
+    background: #1e6180 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.submit--btn:hover {
+    background: #000000 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Campaign Title and Subtitle */
+.mpp-innerpage h1 {
+    color: #277c9f !important;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.mpp-innerpage > p::after {
+    content: "God, where do you want me to be in my giving?";
+    font-size: 15px;
+}
+
+/* Form Container Styling */
+.mppw-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 767px) {
+    .mpp-innerpage h1 {
+        font-size: 22px !important;
+    }
+    .mpp-innerpage > p::after {
+        font-size: 16px;
+    }
+}
