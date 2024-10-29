@@ -73,10 +73,7 @@ div:has(> h2:contains("Progress")),
 div.progress,
 div[class^="progress"],
 div[id^="progress"],
-div.progress-container,
-mpp-pledge-campaign::part(progress),
-mpp-pledge-campaign::shadow-part(progress),
-mpp-pledge-campaign::part(progress-container) {
+div.progress-container {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -86,17 +83,50 @@ mpp-pledge-campaign::part(progress-container) {
     opacity: 0 !important;
     pointer-events: none !important;
     position: absolute !important;
-    clip: rect(0 0 0 0) !important;
+    clip: rect(0, 0, 0, 0) !important;
     clip-path: inset(50%) !important;
 }
 
 /* Hide Progress Section inside Shadow DOM */
 mpp-pledge-campaign::part(progress),
-mpp-pledge-campaign::part(progress-container) {
+mpp-pledge-campaign::part(progress-container),
+mpp-pledge-campaign::shadow-part(progress),
+mpp-pledge-campaign::shadow-part(progress-container),
+mpp-pledge-campaign .progress,
+mpp-pledge-campaign [class*="progress"],
+mpp-pledge-campaign [id*="progress"] {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
+    width: 0 !important;
     overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+}
+
+/* Dynamically Rendered Elements Handling */
+*:has(h2:contains("Progress")),
+*:has(div[class*="progress"]),
+*:has(div[id*="progress"]),
+*:has([class*="Progress"]),
+*:has([id*="Progress"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Override Inline Styles */
+[style*="progress"],
+[style*="Progress"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    clip: rect(0, 0, 0, 0) !important;
 }
 
 /* Form Container Styling */
