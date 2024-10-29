@@ -10,6 +10,12 @@
     --brand-black: #000000;
 }
 
+/* Apply base font to everything */
+* {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+    text-align: left !important;
+}
+
 /* Target Pledge Details */
 #pledgeForm h3:not(#contactBlankForm > h3),
 form#pledgeForm h3:not(#contactBlankForm > h3),
@@ -24,10 +30,7 @@ h3:not(#contactBlankForm > h3) {
     height: auto !important;
 }
 
-#pledgeForm h3::after,
-.mppw-component-container h3::after,
-#pledgeCampaignWrapper h3::after,
-h3::after {
+h3:not(#contactBlankForm > h3)::after {
     content: "My Giving Goal" !important;
     visibility: visible !important;
     position: absolute !important;
@@ -43,9 +46,6 @@ h3::after {
     visibility: hidden !important;
     position: relative !important;
     margin-bottom: 20px !important;
-    display: block !important;
-    width: auto !important;
-    height: auto !important;
 }
 
 #contactBlankForm > h3::after {
@@ -58,72 +58,45 @@ h3::after {
     font-size: 20px !important;
 }
 
-/* Progress Hide Selectors */
-h2:not([class]):not([id]),
-h2:has(text()[contains(., "Progress")]),
-.progress,
-.mpp-progress {
+/* Hide Progress Section - Enhanced */
+h2:contains("Progress"),
+div:has(> h2:contains("Progress")),
+[class*="progress"],
+[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+[aria-label*="progress"],
+[aria-label*="Progress"],
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress,
+div.progress,
+div[class^="progress"],
+div[id^="progress"],
+div.progress-container,
+mpp-pledge-campaign::part(progress),
+mpp-pledge-campaign::shadow-part(progress),
+mpp-pledge-campaign::part(progress-container) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+}
+
+/* Hide Progress Section inside Shadow DOM */
+mpp-pledge-campaign::part(progress),
+mpp-pledge-campaign::part(progress-container) {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
     overflow: hidden !important;
-    position: absolute !important;
-    clip-path: inset(50%) !important;
-}
-
-/* Date Input Labels */
-label.mppw-form-field__alt-label .mppw-form-field__alt-label-content {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
-    content: "Goal Start Date*" !important;
-    color: rgb(107, 156, 191) !important;
-}
-
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
-    content: "Goal End Date*" !important;
-    color: rgb(107, 156, 191) !important;
-}
-
-/* Form Inputs */
-.mppw-form-field__control {
-    width: 100% !important;
-    max-width: 600px !important;
-    height: 40px !important;
-    padding: 8px 12px !important;
-    border-radius: 4px !important;
-}
-
-/* Submit Button */
-.submit--btn {
-    background: #1e6180 !important;
-    border-radius: 8px !important;
-    padding: 10px 20px !important;
-    width: auto !important;
-    max-width: 200px !important;
-    display: block !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-}
-
-.submit--btn:hover {
-    background: #000000 !important;
-    transform: translateY(-1px) !important;
-}
-
-/* Campaign Title and Subtitle */
-.mpp-innerpage h1 {
-    color: #277c9f !important;
-    font-size: 30px;
-    font-weight: 1000;
-}
-
-.mpp-innerpage > p::after {
-    content: "God, where do you want me to be in my giving?";
-    font-size: 15px;
 }
 
 /* Form Container Styling */
@@ -133,11 +106,100 @@ label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
     padding: 20px;
 }
 
-/* Responsive Styles for Mobile */
+/* Campaign Title and Subtitle */
+.mpp-innerpage h1 {
+    color: #277c9f !important;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.mpp-innerpage > p {
+    visibility: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mpp-innerpage > p::after {
+    content: "God, where do you want me to be in my giving?";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    color: #277c9f !important;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Form Inputs */
+.mppw-form-field__control {
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    line-height: 1.4 !important;
+}
+
+/* Date Input Labels */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal Start Date*" !important;
+    visibility: visible !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal End Date*" !important;
+    visibility: visible !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* Form Labels */
+label[for="InstallmentAmount"],
+.mppw-form-field__label {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 8px !important;
+}
+
+label[for="InstallmentAmount"]::after {
+    content: "Goal Amount*" !important;
+    visibility: visible !important;
+    color: rgb(107, 156, 191) !important;
+}
+
+/* Submit Button */
+.submit--btn {
+    background: #1e6180 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.submit--btn:hover {
+    background: #000000 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
         font-size: 22px !important;
     }
+
     .mpp-innerpage > p::after {
         font-size: 16px;
     }
