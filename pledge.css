@@ -66,7 +66,7 @@ h3:not(#contactBlankForm > h3)::after {
     width: 100% !important;
 }
 
-/* Contact Form Input Labels */
+/* Contact Form Input Labels - NEW */
 #contactBlankForm .mppw-form-field__label[for="FirstName"],
 #contactBlankForm .mppw-form-field__label[for="LastName"],
 #contactBlankForm .mppw-form-field__label[for="Email"],
@@ -86,6 +86,7 @@ h3:not(#contactBlankForm > h3)::after {
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+
 #contactBlankForm .mppw-form-field__label[for="LastName"]::after {
     content: "Last Name*" !important;
     visibility: visible !important;
@@ -96,31 +97,27 @@ h3:not(#contactBlankForm > h3)::after {
     font-size: 14px !important;
     font-weight: 400 !important;
 }
-/* Hide Floating Labels */
-.floating-label {
-    display: none !important;
-}
 
-/* Input Field Styling */
-#InstallmentAmount {
-    font-size: 16px !important;
-    color: #333 !important;
-    border: 1px solid #ccc !important;
-    border-radius: 4px !important;
-    padding: 8px 12px !important;
-    width: 100% !important;
-    max-width: 600px !important;
-    height: 40px !important;
-    background-color: white !important;
-    box-sizing: border-box !important;
-}
-
-/* Placeholder Styling for 'Goal Amount*' */
-#InstallmentAmount::placeholder {
+#contactBlankForm .mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    opacity: 1 !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
 }
 
 /* Progress Hide Selectors */
@@ -129,10 +126,113 @@ h2:not([class]):not([id]) {
     visibility: hidden !important;
 }
 
-/* Enhanced Progress Hiding */
+/* Enhanced Progress hiding */
+h2,
 .progress,
 div[class*="progress"],
-div[id*="progress"] {
+div[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+h2:contains("Progress"),
+div:has(> h2:contains("Progress")),
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress,
+h2:matches([text*="Progress"]),
+h2[text*="Progress"],
+h2:has(text()[contains(., "Progress")]),
+div:has(h2:contains("Progress")),
+div.progress,
+div[class^="progress"],
+div[class*=" progress"],
+div[id^="progress"],
+div[id*=" progress"],
+section:has(h2:contains("Progress")),
+*:has(> h2:contains("Progress")) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+}
+
+/* Date Input Labels - UPDATED with exact selectors and adjusted styling */
+label.mppw-form-field__alt-label .mppw-form-field__alt-label-content {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* Start Date Label */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal Start Date*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* End Date Label */
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal End Date*" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* Target Shadow DOM elements */
+:host,
+:root,
+mpp-pledge-campaign,
+mpp-pledge-campaign::part(*),
+mpp-pledge-campaign::shadow-part(*) {
+    & h2,
+    & div,
+    & section,
+    & article,
+    & span {
+        &:has(text()[contains(., "Progress")]),
+        &:has(text()[contains(., "pledged of")]),
+        &:has(text()[contains(., "Goal")]),
+        &[class*="progress"],
+        &[id*="progress"],
+        &[class*="Progress"],
+        &[id*="Progress"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            position: absolute !important;
+            clip: rect(0 0 0 0) !important;
+            clip-path: inset(50%) !important;
+        }
+    }
+}
+
+/* Target specific shadow elements */
+mpp-pledge-campaign::shadow-part(progress),
+mpp-pledge-campaign::shadow-part(progress-container),
+mpp-pledge-campaign::part(progress),
+mpp-pledge-campaign::part(progress-container) {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -140,28 +240,76 @@ div[id*="progress"] {
     opacity: 0 !important;
 }
 
-/* Directly Target the Shadow Root */
-mpp-pledge-campaign::shadow-part(progress),
-mpp-pledge-campaign::shadow-part(progress-container),
-mpp-pledge-campaign::part(progress),
-mpp-pledge-campaign::part(progress-container) {
-    display: none !important;
-    visibility: hidden !important;
+/* Directly target the shadow root */
+mpp-pledge-campaign {
+    & > *,
+    &::shadow,
+    &::part(*) {
+        & .progress,
+        & .progress-bar,
+        & .progress-container,
+        & [class*="progress"],
+        & [id*="progress"],
+        & h2:has(text()[contains(., "Progress")]),
+        & div:has(text()[contains(., "pledged of")]),
+        & div:has(text()[contains(., "Goal")]) {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+        }
+    }
 }
 
-/* Campaign Title */
+/* Override any potential visibility settings */
+[class*="progress"],
+[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
+[aria-label*="progress"],
+[aria-label*="Progress"],
+.progress,
+.progress-bar,
+.progress-container,
+.mpp-progress,
+.mpp-progress-bar,
+.mpp-innerpage-progress {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Apply base font to everything */
+* {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+    text-align: left !important;
+}
+
+/* Form Container Styling */
+.mppw-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Campaign Title */
 .mpp-innerpage h1 {
     color: #277c9f !important;
     font-size: 30px;
     font-weight: 1000;
+    line-height: 1.4;
 }
 
 /* Campaign Subtitle */
 .mpp-innerpage > p {
     visibility: hidden;
+    position: relative;
     margin-bottom: 20px;
 }
-
 .mpp-innerpage > p::after {
     content: "God, where do you want me to be in my giving?";
     visibility: visible;
@@ -169,14 +317,151 @@ mpp-pledge-campaign::part(progress-container) {
     left: 0;
     color: #277c9f !important;
     font-size: 15px;
+    line-height: 1.8;
 }
 
-/* Submit Button */
+/* Form Labels */
+label[for="InstallmentAmount"],
+.mppw-form-field__label,
+label:contains("Goal Amount"),
+.mppw-form-field__label[for="InstallmentAmount"] {
+    visibility: hidden !important;
+    position: relative !important;
+    display: block !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px !important;
+    z-index: 2 !important;
+    order: 1 !important;
+    background: transparent !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* Only Target the Label for InstallmentAmount */
+label[for="InstallmentAmount"] {
+    visibility: hidden !important;
+    position: relative !important;
+    height: 0;  /* Collapse original label height */
+    width: 100%;  /* Ensure full width for replacement text */
+    display: inline-block;
+}
+
+/* Insert 'Goal Amount*' as Replacement Text */
+label[for="InstallmentAmount"]::after {
+    content: "Goal Amount*" !important;
+    visibility: visible !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 1.2;
+    padding-top: 5px;
+}
+
+/* Ensure Floating Labels are Hidden if Present */
+.floating-label {
+    display: none !important;
+}
+
+
+/* Form Inputs */
+.mppw-form-field__control {
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    line-height: 1.4 !important;
+    order: 2 !important;
+    z-index: 1 !important;
+}
+
+/* Total Pledge Display - UPDATED */
+.total-pledge {
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    margin: 15px 0 !important;
+    padding: 10px !important;
+    background: #fff !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+}
+
+/* Ensure Total Giving Goal and Value Align Properly */
+.form--row {
+    display: flex;
+    align-items: left;  /* Align text and value vertically */
+    gap: 8px;  /* Space between the label and value */
+}
+
+/* Hide Original Content and Replace with Custom Text */
+.form--row strong,
+#TotalPledgeValue {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* Insert Custom Text After the Hidden Strong Element */
+.form--row strong::after {
+    content: "Total Giving Goal:" !important;
+    visibility: visible !important;
+    position: static !important;  /* Keep it in flow */
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    margin-right: 5px;  /* Space between label and value */
+}
+
+/* Adjust the Total Pledge Value Element */
+#TotalPledgeValue::after {
+    content: "$0.00";  /* You can dynamically update this value */
+    visibility: visible !important;
+    color: #333 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+
+#TotalPledgeValue::after {
+    content: "$0.00" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 30px !important;
+    max-width: 800px !important;
+}
+
+/* Submit Button Styling */
 .submit--btn {
     background: #1e6180 !important;
+    border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;
     font-size: 16px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    text-transform: none !important;
+    width: auto !important;
+    min-width: 150px !important;
+    max-width: 200px !important;
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
@@ -185,15 +470,36 @@ mpp-pledge-campaign::part(progress-container) {
 .submit--btn:hover {
     background: #000000 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px) !important;
 }
 
-/* Responsive Styles */
+/* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
         font-size: 22px !important;
     }
+    
+    .mpp-innerpage > p::after {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+    
+    .submit--btn {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+    }
 
-    #InstallmentAmount {
-        width: 100% !important;
+    .pledge-details-section {
+        padding: 15px !important;
+        max-width: 100% !important;
+    }
+    
+    .date-fields-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    .date-fields-container .mppw-form-field {
+        max-width: 100% !important;
     }
 }
