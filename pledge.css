@@ -85,15 +85,15 @@ section:has(h2:contains("Progress")),
     clip-path: inset(50%) !important;
 }
 
-/* Date Input Labels - NEW UPDATE */
-.mppw-form-field__alt-label-content:contains("Pledge Start*"),
-div.mppw-form-field__alt-label-content {
+/* Date Input Labels - UPDATED with exact selectors */
+label.mppw-form-field__alt-label .mppw-form-field__alt-label-content {
     visibility: hidden !important;
     position: relative !important;
+    display: inline-block !important;
 }
 
-.mppw-form-field__alt-label-content:contains("Pledge Start*")::after,
-div.mppw-form-field__alt-label-content::after {
+/* Start Date Label */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
     content: "Goal Start Date*" !important;
     visibility: visible !important;
     position: absolute !important;
@@ -103,12 +103,8 @@ div.mppw-form-field__alt-label-content::after {
     font-size: 16px !important;
 }
 
-.mppw-form-field__alt-label-content:contains("Pledge End Date") {
-    visibility: hidden !important;
-    position: relative !important;
-}
-
-.mppw-form-field__alt-label-content:contains("Pledge End Date")::after {
+/* End Date Label */
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
     content: "Goal End Date*" !important;
     visibility: visible !important;
     position: absolute !important;
