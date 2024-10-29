@@ -339,33 +339,31 @@ label:contains("Goal Amount"),
     opacity: 1 !important;
 }
 
-/* Ensure Original Label is Hidden */
-label[for="InstallmentAmount"],
-.mppw-form-field__label {
+/* Only Target the Label for InstallmentAmount */
+label[for="InstallmentAmount"] {
     visibility: hidden !important;
     position: relative !important;
-    display: block !important;
-    height: 0 !important;
-    width: 100%;
+    height: 0;  /* Collapse original label height */
+    width: 100%;  /* Ensure full width for replacement text */
+    display: inline-block;
 }
 
 /* Insert 'Goal Amount*' as Replacement Text */
-label[for="InstallmentAmount"]::after,
-.mppw-form-field__label::after {
+label[for="InstallmentAmount"]::after {
     content: "Goal Amount*" !important;
     visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
+    position: absolute;
+    left: 0;
+    top: 0;
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
-    font-weight: 400 !important;
+    font-weight: 400;
     line-height: 1.2;
+    padding-top: 5px;
 }
 
-/* Hide Floating Labels if Present */
-.floating-label,
-.mppw-form-field > span:not(.mppw-form-field__label) {
+/* Ensure Floating Labels are Hidden if Present */
+.floating-label {
     display: none !important;
 }
 
