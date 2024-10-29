@@ -117,22 +117,9 @@ label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
     font-weight: 400 !important;
 }
 
-/* Frequency Select Styling - NEW */
+/* Frequency Select Styling - UPDATED to hide label */
 select#Frequency + label.mppw-form-field__label {
-    visibility: hidden !important;
-    position: relative !important;
-    display: block !important;
-}
-
-select#Frequency + label.mppw-form-field__label::after {
-    content: "How Often?*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
+    display: none !important;
 }
 
 /* Style placeholder option */
@@ -143,11 +130,6 @@ select#Frequency option[value=""] {
 /* Set default text when nothing selected */
 select#Frequency:invalid {
     color: #666 !important;
-}
-
-select#Frequency:invalid::before {
-    content: "How Often?" !important;
-    visibility: visible !important;
 }
 
 /* Target Shadow DOM elements */
