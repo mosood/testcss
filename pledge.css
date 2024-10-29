@@ -86,13 +86,13 @@ section:has(h2:contains("Progress")),
 }
 
 /* Date Input Labels - NEW UPDATE */
-.mppw-form-field__alt-label-content:contains("Pledge Start Date"),
+.mppw-form-field__alt-label-content:contains("Pledge Start*"),
 div.mppw-form-field__alt-label-content {
     visibility: hidden !important;
     position: relative !important;
 }
 
-.mppw-form-field__alt-label-content:contains("Pledge Start Date")::after,
+.mppw-form-field__alt-label-content:contains("Pledge Start*")::after,
 div.mppw-form-field__alt-label-content::after {
     content: "Goal Start Date*" !important;
     visibility: visible !important;
