@@ -468,21 +468,17 @@ mpp-pledge-campaign {
 
 /* Total Giving Goal Text Fix */
 .form--row strong {
-    visibility: hidden !important;
-    position: relative !important;
+    /* Hide the original text without affecting layout */
+    color: transparent !important;
 }
 
 .form--row strong::after {
-    content: "Total Giving Goal:" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    top: 0 !important;   /* Ensure the text aligns properly vertically */
-    left: 0 !important;  /* Ensure the text aligns properly horizontally */
+    content: "Total Giving Goal: " !important;
     color: rgb(107, 156, 191) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    white-space: nowrap !important;
 }
+
 
 
 
