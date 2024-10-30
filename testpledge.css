@@ -298,8 +298,8 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     min-width: 150px;
     max-width: 200px;
     text-align: center;
-    display: inline-block; /* Changed from block to inline-block */
-    /* Removed margin property to prevent position changes */
+    display: inline-block;
+    /* Removed margin to preserve original positioning */
 }
 
 /* Hover State */
