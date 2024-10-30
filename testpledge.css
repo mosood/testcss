@@ -155,8 +155,6 @@ h3:not(#contactBlankForm > h3)::after {
 }
 
 /* Date Input Labels */
-/* Adjusted selectors to avoid overlapping issues */
-
 /* Start Date Label */
 label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content {
     visibility: hidden !important;
@@ -209,6 +207,11 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     color: var(--brand-blue) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
+}
+
+/* Hide the redundant label inside the div for "Select Frequency" */
+#Frequency + label.mppw-form-field__label {
+    display: none !important;
 }
 
 /* Form Labels for Goal Amount */
@@ -398,4 +401,9 @@ div[id*="progress"],
     position: absolute !important;
     clip: rect(0 0 0 0) !important;
     clip-path: inset(50%) !important;
+}
+
+/* Hide the redundant label inside the div for "Select Frequency" */
+#Frequency + label.mppw-form-field__label {
+    display: none !important;
 }
