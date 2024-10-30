@@ -1,32 +1,63 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1. Font Import and Root Variables
+2. Base Styles
+3. Typography Styles
+4. Form Styles
+   4.1. Form Container
+   4.2. Labels and Inputs
+   4.3. Total Pledge Display
+5. Button Styles
+6. Responsive Styles
+7. Progress Bars and Related Elements
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1. FONT IMPORT AND ROOT VARIABLES
+--------------------------------------------------------------*/
+
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
 
 /* Define brand colors and base styles */
 :root {
+    /* Brand Colors */
     --brand-blue: #277c9f;
     --brand-navy: #203551;
     --brand-gold: #f0ab01;
     --brand-white: #ffffff;
     --brand-black: #000000;
+
+    /* Customizable Colors */
+    --text-color: var(--brand-blue);
+    --heading-color: var(--brand-blue);
+    --label-color: var(--brand-navy);
+    --input-bg-color: var(--brand-white);
+    --input-text-color: var(--brand-black);
+    --button-bg-color: var(--brand-navy);
+    --button-text-color: var(--brand-white);
+    --button-hover-bg-color: var(--brand-black);
 }
+
+/*--------------------------------------------------------------
+2. BASE STYLES
+--------------------------------------------------------------*/
 
 /* Apply base font and text color to everything */
 * {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
     text-align: left !important;
-    color: var(--brand-black) !important; /* Use brand black for text color */
+    color: var(--text-color) !important;
 }
 
-/* Form Container Styling */
-.mppw-form {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+/*--------------------------------------------------------------
+3. TYPOGRAPHY STYLES
+--------------------------------------------------------------*/
 
 /* Main Campaign Title */
 .mpp-innerpage h1 {
-    color: var(--brand-blue) !important;
+    color: var(--heading-color) !important;
     font-size: 30px !important;
     font-weight: 1000 !important;
     line-height: 1.4 !important;
@@ -43,7 +74,7 @@
     visibility: visible !important;
     position: absolute !important;
     left: 0 !important;
-    color: var(--brand-blue) !important; /* Use brand blue */
+    color: var(--heading-color) !important;
     font-size: 15px !important;
     line-height: 1.8 !important;
 }
@@ -70,7 +101,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important; /* Use brand blue */
+    color: var(--heading-color) !important;
     font-weight: 500 !important;
     font-size: 20px !important;
     text-transform: none !important;
@@ -85,14 +116,13 @@ h3:not(#contactBlankForm > h3)::after {
     margin-bottom: 20px !important;
     display: block !important;
 }
-
 #contactBlankForm > h3::after {
     content: "Contact" !important;
     visibility: visible !important;
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important; /* Use brand blue */
+    color: var(--heading-color) !important;
     font-weight: 500 !important;
     font-size: 20px !important;
     text-transform: none !important;
@@ -100,121 +130,24 @@ h3:not(#contactBlankForm > h3)::after {
     width: 100% !important;
 }
 
-/* Contact Form Input Labels */
+/*--------------------------------------------------------------
+4. FORM STYLES
+--------------------------------------------------------------*/
+
+/* 4.1. Form Container */
+.mppw-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 4.2. Labels and Inputs */
+
+/* Hide Original Labels and Replace with Custom Labels */
 #contactBlankForm .mppw-form-field__label[for="FirstName"],
 #contactBlankForm .mppw-form-field__label[for="LastName"],
 #contactBlankForm .mppw-form-field__label[for="Email"],
-#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"] {
-    visibility: hidden !important;
-    position: relative !important;
-    display: block !important;
-}
-
-#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
-    content: "First Name*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
-    content: "Last Name*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-#contactBlankForm .mppw-form-field__label[for="Email"]::after {
-    content: "Email*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
-    content: "Mobile Phone" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Date Input Labels */
-/* Start Date Label */
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
-    content: "Goal Start Date*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* End Date Label */
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
-    content: "Goal End Date*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Hide and Replace the "Select Frequency" Label */
-label[for="Frequency"] .mppw-form-field__alt-label-content {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-label[for="Frequency"] .mppw-form-field__alt-label-content::after {
-    content: "Select Frequency*" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Hide the redundant label inside the div for "Select Frequency" */
-#Frequency + label.mppw-form-field__label {
-    display: none !important;
-}
-
-/* Form Labels for Goal Amount */
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"],
 .mppw-form-field__label[for="InstallmentAmount"] {
     visibility: hidden !important;
     position: relative !important;
@@ -222,33 +155,77 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     margin-bottom: 8px !important;
 }
 
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after,
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after,
+#contactBlankForm .mppw-form-field__label[for="Email"]::after,
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after,
 .mppw-form-field__label[for="InstallmentAmount"]::after {
-    content: "Goal Amount*" !important;
+    content: attr(data-label-text) !important;
     visibility: visible !important;
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
+    color: var(--label-color) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 
-/* Control Input field */
-.mppw-form-field__control#InstallmentAmount {
-    border: 1px solid #ccc !important;
-    padding: 8px 12px !important;
-    font-size: 16px !important;
-    width: 100% !important;
-    border-radius: 4px !important;
-    background-color: var(--brand-white) !important; /* Use brand white */
+/* Custom Labels Text */
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
+    content: "First Name*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
+    content: "Last Name*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+}
+.mppw-form-field__label[for="InstallmentAmount"]::after {
+    content: "Goal Amount*" !important;
 }
 
-/* Ensure Floating Labels are Hidden if Present */
-.floating-label {
+/* Date Input Labels */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content,
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content,
+label[for="Frequency"] .mppw-form-field__alt-label-content {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after,
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after,
+label[for="Frequency"] .mppw-form-field__alt-label-content::after {
+    content: attr(data-label-text) !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: var(--label-color) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* Custom Labels Text */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal Start Date*" !important;
+}
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal End Date*" !important;
+}
+label[for="Frequency"] .mppw-form-field__alt-label-content::after {
+    content: "Select Frequency*" !important;
+}
+
+/* Hide the redundant label inside the div for "Select Frequency" */
+#Frequency + label.mppw-form-field__label {
     display: none !important;
 }
 
-/* Form Inputs */
+/* Input Fields */
 .mppw-form-field__control {
     width: 100% !important;
     max-width: 600px !important;
@@ -256,20 +233,26 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     padding: 8px 12px !important;
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
-    background-color: var(--brand-white) !important; /* Use brand white */
+    background-color: var(--input-bg-color) !important;
     box-sizing: border-box !important;
     font-size: 16px !important;
-    color: var(--brand-black) !important; /* Use brand black */
+    color: var(--input-text-color) !important;
     line-height: 1.4 !important;
 }
 
-/* Total Pledge Display */
+/* Ensure Floating Labels are Hidden if Present */
+.floating-label {
+    display: none !important;
+}
+
+/* 4.3. Total Pledge Display */
+
 .total-pledge {
-    color: var(--brand-blue) !important; /* Use brand blue */
+    color: var(--heading-color) !important;
     font-size: 14px !important;
     margin: 15px 0 !important;
     padding: 10px !important;
-    background: var(--brand-white) !important; /* Use brand white */
+    background: var(--input-bg-color) !important;
     border-radius: 4px !important;
     display: inline-block !important;
 }
@@ -291,7 +274,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     content: "Total Giving Goal:" !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: var(--brand-navy) !important; /* Use brand navy */
+    color: var(--label-color) !important;
     position: static !important;
     visibility: visible !important;
     margin-right: 5px !important;
@@ -301,7 +284,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 #TotalPledgeValue {
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: var(--brand-black) !important; /* Use brand black */
+    color: var(--input-text-color) !important;
 }
 
 /* Hide any overlapping or redundant content in #TotalPledgeValue */
@@ -317,15 +300,18 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     max-width: 800px !important;
 }
 
-/* Submit Button Styling */
+/*--------------------------------------------------------------
+5. BUTTON STYLES
+--------------------------------------------------------------*/
+
 .submit--btn {
-    background: var(--brand-navy) !important; /* Use brand navy */
+    background: var(--button-bg-color) !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;
     font-size: 16px !important;
     font-weight: 500 !important;
-    color: var(--brand-white) !important; /* Button text color */
+    color: var(--button-text-color) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
@@ -338,12 +324,15 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 }
 
 .submit--btn:hover {
-    background: var(--brand-black) !important; /* Use brand black on hover */
+    background: var(--button-hover-bg-color) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
 
-/* Mobile Responsive Styles */
+/*--------------------------------------------------------------
+6. RESPONSIVE STYLES
+--------------------------------------------------------------*/
+
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
         font-size: 22px !important;
@@ -374,13 +363,12 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     }
 }
 
-/* Hide Progress Bars and Related Elements */
-h2:not([class]):not([id]) {
-    display: none !important;
-    visibility: hidden !important;
-}
+/*--------------------------------------------------------------
+7. PROGRESS BARS AND RELATED ELEMENTS
+--------------------------------------------------------------*/
 
-/* Enhanced Progress hiding */
+/* Hide Progress Bars and Related Elements */
+h2:not([class]):not([id]),
 h2,
 .progress,
 div[class*="progress"],
@@ -389,7 +377,8 @@ div[id*="progress"],
 [id*="Progress"],
 .mpp-progress,
 .mpp-progress-bar,
-.mpp-innerpage-progress {
+.mpp-innerpage-progress,
+#Frequency + label.mppw-form-field__label {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -402,9 +391,4 @@ div[id*="progress"],
     position: absolute !important;
     clip: rect(0 0 0 0) !important;
     clip-path: inset(50%) !important;
-}
-
-/* Hide the redundant label inside the div for "Select Frequency" */
-#Frequency + label.mppw-form-field__label {
-    display: none !important;
 }
