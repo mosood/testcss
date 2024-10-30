@@ -30,14 +30,14 @@
     --brand-black: #000000;
 
     /* Customizable Colors */
-    --text-color: #000000; /* Default text color */
-    --heading-color: #277c9f; /* Heading color */
-    --label-color: #203551; /* Label color */
-    --input-bg-color: #ffffff; /* Input background color */
-    --input-text-color: #000000; /* Input text color */
-    --button-bg-color: #203551; /* Button background color */
-    --button-text-color: #ffffff; /* Button text color */
-    --button-hover-bg-color: #000000; /* Button hover background color */
+    --text-color: var(--brand-black);        /* Default text color */
+    --heading-color: var(--brand-blue);      /* Heading color */
+    --label-color: var(--brand-navy);        /* Label color */
+    --input-bg-color: var(--brand-white);    /* Input background color */
+    --input-text-color: var(--brand-black);  /* Input text color */
+    --button-bg-color: var(--brand-navy);    /* Button background color */
+    --button-text-color: var(--brand-white); /* Button text color */
+    --button-hover-bg-color: var(--brand-black); /* Button hover background color */
 }
 
 /*--------------------------------------------------------------
