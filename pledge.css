@@ -465,17 +465,21 @@ mpp-pledge-campaign {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
+
 /* Total Giving Goal Left Alignment */
 div.form--row {
     display: flex !important;
-    justify-content: flex-start !important;
-    margin-left: 15px !important;
+    justify-content: flex-start !important; /* Left alignment */
+    margin-left: 0 !important;  /* Align with other headings */
+    padding-left: 0 !important;
+    color: rgb(107, 156, 191) !important;
 }
 
-/* Keep value visible */
+div.form--row strong,
 div.form--row #TotalPledgeValue {
     visibility: visible !important;
     color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
 }
 
 
