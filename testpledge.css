@@ -14,7 +14,7 @@
 * {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
     text-align: left !important;
-    color: #333 !important; /* Ensures consistent text color */
+    color: var(--brand-black) !important; /* Use brand black for text color */
 }
 
 /* Form Container Styling */
@@ -43,7 +43,7 @@
     visibility: visible !important;
     position: absolute !important;
     left: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-blue) !important; /* Use brand blue */
     font-size: 15px !important;
     line-height: 1.8 !important;
 }
@@ -70,7 +70,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-blue) !important; /* Use brand blue */
     font-weight: 500 !important;
     font-size: 20px !important;
     text-transform: none !important;
@@ -92,7 +92,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-blue) !important; /* Use brand blue */
     font-weight: 500 !important;
     font-size: 20px !important;
     text-transform: none !important;
@@ -116,7 +116,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -127,7 +127,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -138,7 +138,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -149,7 +149,7 @@ h3:not(#contactBlankForm > h3)::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -168,7 +168,7 @@ label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -186,7 +186,7 @@ label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -204,7 +204,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -228,7 +228,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     font-size: 14px !important;
     font-weight: 400 !important;
 }
@@ -240,7 +240,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     font-size: 16px !important;
     width: 100% !important;
     border-radius: 4px !important;
-    background-color: #fff !important;
+    background-color: var(--brand-white) !important; /* Use brand white */
 }
 
 /* Ensure Floating Labels are Hidden if Present */
@@ -256,20 +256,20 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     padding: 8px 12px !important;
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
-    background-color: #fff !important;
+    background-color: var(--brand-white) !important; /* Use brand white */
     box-sizing: border-box !important;
     font-size: 16px !important;
-    color: #333 !important;
+    color: var(--brand-black) !important; /* Use brand black */
     line-height: 1.4 !important;
 }
 
 /* Total Pledge Display */
 .total-pledge {
-    color: var(--brand-blue) !important;
+    color: var(--brand-blue) !important; /* Use brand blue */
     font-size: 14px !important;
     margin: 15px 0 !important;
     padding: 10px !important;
-    background: #fff !important;
+    background: var(--brand-white) !important; /* Use brand white */
     border-radius: 4px !important;
     display: inline-block !important;
 }
@@ -277,8 +277,8 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 /* Ensure Total Giving Goal and Value Align Properly */
 .form--row {
     display: flex !important;
-    align-items: center !important; /* Corrected from 'left' to 'center' */
-    gap: 8px !important;  /* Space between the label and value */
+    align-items: center !important;
+    gap: 8px !important;
 }
 
 /* Hide Original Content and Replace with Custom Text */
@@ -291,7 +291,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     content: "Total Giving Goal:" !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: var(--brand-blue) !important;
+    color: var(--brand-navy) !important; /* Use brand navy */
     position: static !important;
     visibility: visible !important;
     margin-right: 5px !important;
@@ -301,7 +301,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 #TotalPledgeValue {
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: #333 !important;
+    color: var(--brand-black) !important; /* Use brand black */
 }
 
 /* Hide any overlapping or redundant content in #TotalPledgeValue */
@@ -319,12 +319,13 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 
 /* Submit Button Styling */
 .submit--btn {
-    background: #1e6180 !important;
+    background: var(--brand-navy) !important; /* Use brand navy */
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;
     font-size: 16px !important;
     font-weight: 500 !important;
+    color: var(--brand-white) !important; /* Button text color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
@@ -337,7 +338,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 }
 
 .submit--btn:hover {
-    background: #000000 !important;
+    background: var(--brand-black) !important; /* Use brand black on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
