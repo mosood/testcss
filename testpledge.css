@@ -30,14 +30,14 @@
     --brand-black: #000000;
 
     /* Customizable Colors */
-    --text-color: var(--brand-black);        /* Default text color */
-    --heading-color: var(--brand-blue);      /* Heading color */
-    --label-color: var(--brand-navy);        /* Label color */
-    --input-bg-color: var(--brand-white);    /* Input background color */
-    --input-text-color: var(--brand-black);  /* Input text color */
-    --button-bg-color: var(--brand-navy);    /* Button background color */
-    --button-text-color: var(--brand-white); /* Button text color */
-    --button-hover-bg-color: var(--brand-black); /* Button hover background color */
+    --text-color: var(--brand-blue);
+    --heading-color: #277c9f; /* This is the variable to update */
+    --label-color: var(--brand-navy);
+    --input-bg-color: var(--brand-white);
+    --input-text-color: var(--brand-black);
+    --button-bg-color: var(--brand-navy);
+    --button-text-color: var(--brand-white);
+    --button-hover-bg-color: var(--brand-black);
 }
 
 /*--------------------------------------------------------------
