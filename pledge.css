@@ -466,23 +466,24 @@ mpp-pledge-campaign {
     transform: translateY(-1px) !important;
 }
 
-/* Total Pledge Display - UPDATED */
-.total-pledge {
-    color: rgb(107, 156, 191) !important;
-    font-size: 14px !important;
-    margin: 15px 0 !important;
-    padding: 10px !important;
-    background: #fff !important;
-    border-radius: 4px !important;
-    display: inline-block !important;
+/* Total Giving Goal Text Fix */
+.form--row strong {
+    visibility: hidden !important;
+    position: relative !important;
 }
 
-/* Ensure Total Giving Goal and Value Align Properly */
-.form--row {
-    display: flex;
-    align-items: left;  /* Align text and value vertically */
-    gap: 8px;  /* Space between the label and value */
+.form--row strong::after {
+    content: "Total Giving Goal:" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    top: 0 !important;   /* Ensure the text aligns properly vertically */
+    left: 0 !important;  /* Ensure the text aligns properly horizontally */
+    color: rgb(107, 156, 191) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    white-space: nowrap !important;
 }
+
 
 
 /* Mobile Responsive Styles */
