@@ -298,10 +298,11 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     min-width: 150px;
     max-width: 200px;
     text-align: center;
-    display: block;
-    margin: 0 auto;
+    display: inline-block; /* Changed from block to inline-block */
+    /* Removed margin property to prevent position changes */
 }
 
+/* Hover State */
 .submit--btn:hover {
     background: var(--button-hover-bg-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
