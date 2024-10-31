@@ -304,14 +304,15 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 5. BUTTON STYLES
 --------------------------------------------------------------*/
 
+/* Submit Button Styling */
 .submit--btn {
-    background: var(--button-bg-color) !important;
+    position: relative !important;
+    background: #1e6180 !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;
     font-size: 16px !important;
     font-weight: 500 !important;
-    color: var(--button-text-color) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
@@ -321,10 +322,19 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
+    color: white !important;
+}
+
+.submit--btn span {
+    display: none !important;
+}
+
+.submit--btn::before {
+    content: "Create Giving Goal" !important;
 }
 
 .submit--btn:hover {
-    background: var(--button-hover-bg-color) !important;
+    background: #000000 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
