@@ -303,43 +303,6 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 /*--------------------------------------------------------------
 5. BUTTON STYLES
 --------------------------------------------------------------*/
-/* Submit Button Styling */
-.submit--btn,
-input[type="submit"].submit--btn {
-    background: #1e6180 !important;
-    border: none !important;
-    border-radius: 8px !important;
-    padding: 10px 20px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease !important;
-    text-transform: none !important;
-    width: auto !important;
-    min-width: 150px !important;
-    max-width: 200px !important;
-    text-align: center !important;
-    display: block !important;
-    margin: 0 auto !important;
-    color: white !important;
-}
-
-/* Change the button text */
-input[type="submit"].submit--btn {
-    font-size: 0 !important;  /* Hide original text */
-}
-
-input[type="submit"].submit--btn::before {
-    content: "Create Giving Goal" !important;
-    font-size: 16px !important;  /* Restore font size for new text */
-    display: inline-block !important;
-}
-
-.submit--btn:hover {
-    background: #000000 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(-1px) !important;
-}
 
 /* Initially hide submit button and control visibility */
 mpp-pledge-campaign::part(submit-button),
@@ -353,6 +316,12 @@ input[type="submit"]#createPledge {
 .mppw-btn.primary.submit--btn.loaded {
     opacity: 1 !important;
 }
+
+/* Submit Button Styling */
+.submit--btn {
+    background: #1e6180 !important;
+    border: none !important;
+
 /*--------------------------------------------------------------
 6. RESPONSIVE STYLES
 --------------------------------------------------------------*/
