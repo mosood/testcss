@@ -333,35 +333,58 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 6. RESPONSIVE STYLES
 --------------------------------------------------------------*/
 
+/* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
     .mpp-innerpage h1 {
         font-size: 22px !important;
     }
-
+    
     .mpp-innerpage > p::after {
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
-
+    
     .submit--btn {
-        font-size: 16px !important;
-        padding: 10px 20px !important;
+        font-size: 18px !important;
+        padding: 15px 20px !important;
     }
 
     .pledge-details-section {
         padding: 15px !important;
         max-width: 100% !important;
     }
-
+    
     .date-fields-container {
         flex-direction: column !important;
         gap: 10px !important;
     }
-
+    
     .date-fields-container .mppw-form-field {
         max-width: 100% !important;
     }
+    
+    /* Additional adjustments */
+    .mppw-form-field {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .mppw-form-field__label {
+        display: block !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .mppw-form {
+        padding: 10px !important;
+    }
+    
+    textarea {
+        min-height: 100px !important;
+        width: 100% !important;
+    }
 }
+
 
 /*--------------------------------------------------------------
 7. PROGRESS BARS AND RELATED ELEMENTS
