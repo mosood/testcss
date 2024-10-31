@@ -341,6 +341,18 @@ input[type="submit"].submit--btn::before {
     transform: translateY(-1px) !important;
 }
 
+/* Initially hide submit button and control visibility */
+mpp-pledge-campaign::part(submit-button),
+.mppw-btn.primary.submit--btn,
+input[type="submit"]#createPledge {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease-in !important;
+}
+
+/* Show button once loaded and text updated */
+.mppw-btn.primary.submit--btn.loaded {
+    opacity: 1 !important;
+}
 /*--------------------------------------------------------------
 6. RESPONSIVE STYLES
 --------------------------------------------------------------*/
