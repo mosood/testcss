@@ -303,22 +303,15 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 /*--------------------------------------------------------------
 5. BUTTON STYLES
 --------------------------------------------------------------*/
-/* Ensure the parent container is positioned relatively */
-.form--col {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Hide the original button text */
-.submit--btn {
-    background: var(--button-bg-color) !important;
+/* Submit Button Styling */
+.submit--btn,
+input[type="submit"].submit--btn {
+    background: #1e6180 !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 20px !important;
     font-size: 16px !important;
     font-weight: 500 !important;
-    color: transparent !important; /* Hide original text */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
     text-transform: none !important;
@@ -328,36 +321,22 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     text-align: center !important;
     display: block !important;
     margin: 0 auto !important;
-    position: relative;
-    z-index: 1;
+    color: white !important;
 }
 
-/* Add new text via ::after pseudo-element */
-.form--col::after {
-    content: "Create Giving Goal";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--button-bg-color) !important;
-    color: var(--button-text-color) !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 2;
-    pointer-events: none; /* Allow clicks to pass through */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease !important;
-    text-transform: none !important;
+/* Change the button text */
+input[type="submit"].submit--btn {
+    font-size: 0 !important;  /* Hide original text */
 }
 
-/* Hover effect */
-.form--col:hover::after {
-    background: var(--button-hover-bg-color) !important;
+input[type="submit"].submit--btn::before {
+    content: "Create Giving Goal" !important;
+    font-size: 16px !important;  /* Restore font size for new text */
+    display: inline-block !important;
+}
+
+.submit--btn:hover {
+    background: #000000 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-1px) !important;
 }
