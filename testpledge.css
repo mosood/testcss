@@ -414,12 +414,16 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
         padding-top: 24px !important;
     }
     
-    /* Input focus states for touch */
-    .mppw-form-field__control:focus {
-        outline: none !important;
-        border-color: var(--brand-blue) !important;
-        box-shadow: 0 0 0 3px rgba(39, 124, 159, 0.2) !important;
-    }
+   /* Add hover and focus states for inputs */
+   .mppw-form-field__control:hover {
+       border-color: var(--brand-blue) !important;
+   }
+   
+   .mppw-form-field__control:focus {
+       outline: none !important;
+       border-color: var(--brand-blue) !important;
+       box-shadow: 0 0 0 2px rgba(39, 124, 159, 0.2) !important;
+   }
     
     /* Error states */
     .mppw-form-field__control.error {
