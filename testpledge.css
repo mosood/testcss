@@ -261,38 +261,41 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 .form--row {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 4px !important;
+    margin: 15px 0 !important;
 }
 
-/* Hide Original Content and Replace with Custom Text */
+/* Style for the label text */
 .form--row strong {
-    font-size: 0 !important;
-    position: relative !important;
-}
-
-.form--row strong::after {
-    content: "Total Giving Goal:" !important;
     font-size: 14px !important;
-    font-weight: 400 !important;
     color: var(--label-color) !important;
-    position: static !important;
-    visibility: visible !important;
-    margin-right: 5px !important;
+    font-weight: 400 !important;
+    display: inline-block !important;
+    margin-right: 4px !important;
 }
 
-/* Adjust the Total Pledge Value Element */
+/* Remove the previous ::after content and use direct text */
+.form--row strong::after {
+    content: none !important;
+}
+
 #TotalPledgeValue {
     font-size: 14px !important;
     font-weight: 400 !important;
     color: var(--input-text-color) !important;
+    display: inline-block !important;
 }
 
-/* Hide any overlapping or redundant content in #TotalPledgeValue */
-#TotalPledgeValue::before,
-#TotalPledgeValue::after {
-    content: "" !important;
-    display: none !important;
+/* Container for the total amount display */
+.total-pledge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 15px 0 !important;
 }
+
 
 /* Contact Section */
 .contact-section {
@@ -322,18 +325,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
     display: block !important;
     margin: 0 auto !important;
 }
-/* Initially hide submit button and control visibility */
-mpp-pledge-campaign::part(submit-button),
-.mppw-btn.primary.submit--btn,
-input[type="submit"]#createPledge {
-    opacity: 0 !important;
-    transition: opacity 0.3s ease-in !important;
-}
 
-/* Show button once loaded and text updated */
-.mppw-btn.primary.submit--btn.loaded {
-    opacity: 1 !important;
-}
 .submit--btn:hover {
     background: var(--button-hover-bg-color) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
