@@ -9,8 +9,9 @@
    4.2. Labels and Inputs
    4.3. Total Pledge Display
 5. Button Styles
-6. Responsive Styles
-7. Progress Bars and Related Elements
+6. SUCCESS MESSAGE STYLES
+7. Responsive Styles
+8. Progress Bars and Related Elements
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -333,7 +334,56 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 }
 
 /*--------------------------------------------------------------
-6. RESPONSIVE STYLES
+6. SUCCESS MESSAGE STYLES
+--------------------------------------------------------------*/
+
+/* Success message container */
+.mppw-alert.mppw-alert__success {
+    background-color: #f1f9f1 !important;
+    border: 1px solid #d4e8d4 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    margin: 20px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Icon styling */
+.mppw-alert__icon {
+    width: 16px !important;
+    height: 16px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.mppw-alert__icon::before {
+    content: "✓" !important;
+    color: #2d862d !important;
+    font-size: 14px !important;
+}
+
+/* Message text */
+.mppw-alert__text {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+    min-height: 20px !important;
+}
+
+.mppw-alert__text::after {
+    content: "Thank you for making a giving goal!" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: #2d862d !important;
+    font-size: 14px !important;
+}
+/*--------------------------------------------------------------
+7. RESPONSIVE STYLES
 --------------------------------------------------------------*/
 
 /* Mobile Responsive Styles */
@@ -443,7 +493,7 @@ label[for="Frequency"] .mppw-form-field__alt-label-content::after {
 
 
 /*--------------------------------------------------------------
-7. PROGRESS BARS AND RELATED ELEMENTS
+8. PROGRESS BARS AND RELATED ELEMENTS
 --------------------------------------------------------------*/
 
 /* Hide Progress Bars and Related Elements */
