@@ -9,7 +9,7 @@
    4.2. Labels and Inputs
    4.3. Total Pledge Display
 5. Button Styles
-6. Success Message Styles
+6. SUCCESS MESSAGE STYLES
 7. Responsive Styles
 8. Progress Bars and Related Elements
 --------------------------------------------------------------*/
@@ -45,24 +45,9 @@
 2. BASE STYLES
 --------------------------------------------------------------*/
 
-/* Force display of key elements */
-form,
-.mppw-form,
-.mpp-pledge-campaign {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* More specific base styles */
-.mppw-form,
-.mppw-form * {
+/* Apply base font and text color to everything */
+* {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
-}
-
-.mppw-form input,
-.mppw-form select,
-.mppw-form textarea {
     text-align: left !important;
     color: var(--text-color) !important;
 }
@@ -73,7 +58,6 @@ form,
 
 /* Main Campaign Title */
 .mpp-innerpage h1 {
-    display: block !important;
     color: var(--heading-color) !important;
     font-size: 30px !important;
     font-weight: 1000 !important;
@@ -82,36 +66,69 @@ form,
 
 /* Campaign Subtitle */
 .mpp-innerpage > p {
-    display: block !important;
+    visibility: hidden !important;
+    position: relative !important;
     margin-bottom: 20px !important;
 }
-
-.mpp-innerpage > p::before {
+.mpp-innerpage > p::after {
     content: "God, where do you want me to be in my giving?" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
     color: var(--heading-color) !important;
     font-size: 15px !important;
     line-height: 1.8 !important;
+}
+
+/* Pledge Details Heading */
+#pledgeForm h3:not(#contactBlankForm > h3),
+form#pledgeForm h3:not(#contactBlankForm > h3),
+.mppw-component-container h3:not(#contactBlankForm > h3),
+#pledgeCampaignWrapper h3:not(#contactBlankForm > h3),
+h3:not(#contactBlankForm > h3) {
+    visibility: hidden !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
     display: block !important;
 }
 
-/* Section Headings */
-.mppw-form h3,
-#contactBlankForm > h3 {
-    display: block !important;
+#pledgeForm h3:not(#contactBlankForm > h3)::after,
+form#pledgeForm h3:not(#contactBlankForm > h3)::after,
+.mppw-component-container h3:not(#contactBlankForm > h3)::after,
+#pledgeCampaignWrapper h3:not(#contactBlankForm > h3)::after,
+h3:not(#contactBlankForm > h3)::after {
+    content: "My Giving Goal" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
     color: var(--heading-color) !important;
     font-weight: 500 !important;
     font-size: 20px !important;
+    text-transform: none !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Contact Section Heading */
+#contactBlankForm > h3 {
+    visibility: hidden !important;
+    position: relative !important;
     margin-bottom: 20px !important;
-}
-
-.mppw-form h3::before {
-    content: "My Giving Goal" !important;
     display: block !important;
 }
-
-#contactBlankForm > h3::before {
+#contactBlankForm > h3::after {
     content: "Contact" !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: var(--heading-color) !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-transform: none !important;
     display: block !important;
+    width: 100% !important;
 }
 
 /*--------------------------------------------------------------
@@ -120,29 +137,97 @@ form,
 
 /* 4.1. Form Container */
 .mppw-form {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* 4.2. Labels and Inputs */
-.mppw-form-field {
-    margin-bottom: 15px !important;
-    display: block !important;
-}
 
-.mppw-form-field__label {
+/* Hide Original Labels and Replace with Custom Labels */
+#contactBlankForm .mppw-form-field__label[for="FirstName"],
+#contactBlankForm .mppw-form-field__label[for="LastName"],
+#contactBlankForm .mppw-form-field__label[for="Email"],
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"],
+.mppw-form-field__label[for="InstallmentAmount"] {
+    visibility: hidden !important;
+    position: relative !important;
     display: block !important;
     margin-bottom: 8px !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after,
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after,
+#contactBlankForm .mppw-form-field__label[for="Email"]::after,
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after,
+.mppw-form-field__label[for="InstallmentAmount"]::after {
+    content: attr(data-label-text) !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
     color: var(--label-color) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 
+/* Custom Labels Text */
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
+    content: "First Name*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
+    content: "Last Name*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="Email"]::after {
+    content: "Email*" !important;
+}
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
+    content: "Mobile Phone" !important;
+}
+.mppw-form-field__label[for="InstallmentAmount"]::after {
+    content: "Goal Amount*" !important;
+}
+
+/* Date Input Labels */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content,
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content,
+label[for="Frequency"] .mppw-form-field__alt-label-content {
+    visibility: hidden !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after,
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after,
+label[for="Frequency"] .mppw-form-field__alt-label-content::after {
+    content: attr(data-label-text) !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: var(--label-color) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+/* Custom Labels Text */
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal Start Date*" !important;
+}
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+    content: "Goal End Date*" !important;
+}
+label[for="Frequency"] .mppw-form-field__alt-label-content::after {
+    content: "Select Frequency*" !important;
+}
+
+/* Hide the redundant label inside the div for "Select Frequency" */
+#Frequency + label.mppw-form-field__label {
+    display: none !important;
+}
+
 /* Input Fields */
 .mppw-form-field__control {
-    display: block !important;
     width: 100% !important;
     max-width: 600px !important;
     height: 40px !important;
@@ -156,24 +241,67 @@ form,
     line-height: 1.4 !important;
 }
 
+/* Ensure Floating Labels are Hidden if Present */
+.floating-label {
+    display: none !important;
+}
+
 /* 4.3. Total Pledge Display */
+
 .total-pledge {
+    color: var(--heading-color) !important;
+    font-size: 14px !important;
+    margin: 15px 0 !important;
+    padding: 10px !important;
+    background: var(--input-bg-color) !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+}
+
+/* Ensure Total Giving Goal and Value Align Properly */
+.form--row {
     display: flex !important;
     align-items: center !important;
     gap: 4px !important;
     margin: 15px 0 !important;
 }
 
-.form--row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
+/* Style for the label text */
+.form--row strong {
+    font-size: 14px !important;
+    color: var(--label-color) !important;
+    font-weight: 400 !important;
+    display: inline-block !important;
+    margin-right: 4px !important;
 }
 
-.form--row strong,
+/* Remove the previous ::after content and use direct text */
+.form--row strong::after {
+    content: none !important;
+}
+
 #TotalPledgeValue {
     font-size: 14px !important;
+    font-weight: 400 !important;
     color: var(--input-text-color) !important;
+    display: inline-block !important;
+}
+
+/* Container for the total amount display */
+.total-pledge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 15px 0 !important;
+}
+
+
+/* Contact Section */
+.contact-section {
+    margin-top: 30px !important;
+    max-width: 800px !important;
 }
 
 /*--------------------------------------------------------------
@@ -181,86 +309,170 @@ form,
 --------------------------------------------------------------*/
 
 .submit--btn {
-    display: block !important;
+    background: var(--button-bg-color) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--button-text-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    text-transform: none !important;
     width: auto !important;
     min-width: 150px !important;
     max-width: 200px !important;
-    margin: 20px auto !important;
-    padding: 10px 20px !important;
-    background: var(--button-bg-color) !important;
-    color: var(--button-text-color) !important;
-    border: none !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
     text-align: center !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .submit--btn:hover {
     background: var(--button-hover-bg-color) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px) !important;
 }
 
 /*--------------------------------------------------------------
 6. SUCCESS MESSAGE STYLES
 --------------------------------------------------------------*/
 
-.mppw-alert.mppw-alert__success {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    margin: 20px 0 !important;
-    padding: 12px 16px !important;
-    background-color: #f1f9f1 !important;
-    border: 1px solid #d4e8d4 !important;
-    border-radius: 4px !important;
-}
-
-.mppw-alert__icon::before {
-    content: "✓" !important;
-    color: #2d862d !important;
-}
-
-.mppw-alert__text::before {
-    content: "Thank you for making a giving goal!" !important;
-    color: #2d862d !important;
-    font-size: 14px !important;
-}
-
 /*--------------------------------------------------------------
 7. RESPONSIVE STYLES
 --------------------------------------------------------------*/
 
+/* Mobile Responsive Styles */
 @media screen and (max-width: 767px) {
+    /* Improve mobile form layout */
     .mppw-form {
         padding: 15px !important;
     }
+    
+    /* Header text adjustments */
+    .mpp-innerpage h1 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+    }
 
+    /* Form section spacing */
+    .mppw-form-field {
+        margin-bottom: 24px !important;
+    }
+    
+    /* Stack date fields */
+    .date-fields-container {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    /* Enhanced input fields for mobile */
     .mppw-form-field__control {
         min-height: 44px !important;
         font-size: 16px !important;
+        padding: 12px 16px !important;
         width: 100% !important;
     }
-
+    
+    /* Larger, bolder labels */
+    .mppw-form-field__label,
+    .mppw-form-field__alt-label-content::after,
+    label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after,
+    label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after,
+    label[for="Frequency"] .mppw-form-field__alt-label-content::after {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* Enhanced select dropdowns */
+    select.mppw-form-field__control {
+        padding-right: 40px !important;
+        background-position: right 16px center !important;
+    }
+    
+    /* Total giving goal display */
+    .total-pledge {
+        margin: 20px 0 !important;
+        padding: 12px 0 !important;
+        width: 100% !important;
+    }
+    
+    .form--row {
+        justify-content: flex-start !important;
+        gap: 8px !important;
+    }
+    
+    /* Submit button improvements */
     .submit--btn {
         width: 100% !important;
         max-width: none !important;
         min-height: 44px !important;
+        font-size: 16px !important;
+        padding: 12px 24px !important;
+        margin-top: 32px !important;
     }
-
-    .total-pledge {
-        width: 100% !important;
+    
+    /* Contact section adjustments */
+    #contactBlankForm {
+        margin-top: 32px !important;
+        padding-top: 24px !important;
+    }
+    
+   /* Add hover and focus states for inputs */
+   .mppw-form-field__control:hover {
+       border-color: var(--brand-blue) !important;
+   }
+   
+   .mppw-form-field__control:focus {
+       outline: none !important;
+       border-color: var(--brand-blue) !important;
+       box-shadow: 0 0 0 2px rgba(39, 124, 159, 0.2) !important;
+   }
+    
+    /* Error states */
+    .mppw-form-field__control.error {
+        border-width: 2px !important;
+    }
+    
+    .error-message {
+        font-size: 14px !important;
+        margin-top: 8px !important;
+    }
+    
+    /* Better spacing for required field indicators */
+    .mppw-form-field__required {
+        margin-left: 6px !important;
     }
 }
+
 
 /*--------------------------------------------------------------
 8. PROGRESS BARS AND RELATED ELEMENTS
 --------------------------------------------------------------*/
 
+/* Hide Progress Bars and Related Elements */
+h2:not([class]):not([id]),
+h2,
 .progress,
+div[class*="progress"],
+div[id*="progress"],
+[class*="Progress"],
+[id*="Progress"],
 .mpp-progress,
 .mpp-progress-bar,
-.mpp-innerpage-progress {
+.mpp-innerpage-progress,
+#Frequency + label.mppw-form-field__label {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
 }
