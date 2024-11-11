@@ -2,16 +2,11 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1. Font Import and Root Variables
-2. Base Styles
-3. Typography Styles
+2. Critical Display and Base Styles
+3. Typography and Headings
 4. Form Styles
-   4.1. Form Container
-   4.2. Labels and Inputs
-   4.3. Total Pledge Display
 5. Button Styles
-6. SUCCESS MESSAGE STYLES
-7. Responsive Styles
-8. Progress Bars and Related Elements
+6. Success Message Styles
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -23,364 +18,187 @@
 
 /* Define brand colors and base styles */
 :root {
-    /* Brand Colors */
-    --brand-blue: #277c9f;
+    --text-color: #203551;
     --brand-navy: #203551;
-    --brand-gold: #f0ab01;
     --brand-white: #ffffff;
     --brand-black: #000000;
-
-    /* Customizable Colors */
-    --text-color: var(--brand-blue);
-    --heading-color: var(--brand-blue);
-    --label-color: var(--brand-navy);
-    --input-bg-color: var(--brand-white);
-    --input-text-color: var(--brand-black);
-    --button-bg-color: var(--brand-navy);
-    --button-text-color: var(--brand-white);
-    --button-hover-bg-color: var(--brand-black);
 }
 
 /*--------------------------------------------------------------
-2. BASE STYLES
+2. CRITICAL DISPLAY AND BASE STYLES
 --------------------------------------------------------------*/
 
-/* Apply base font and text color to everything */
-* {
+/* Force display of key elements */
+form,
+.mppw-form,
+.mpp-pledge-campaign {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Base font styles */
+.mppw-form,
+.mppw-form * {
     font-family: 'Source Sans Pro', Arial, sans-serif !important;
-    text-align: left !important;
     color: var(--text-color) !important;
 }
 
 /*--------------------------------------------------------------
-3. TYPOGRAPHY STYLES
+3. TYPOGRAPHY AND HEADINGS
 --------------------------------------------------------------*/
 
-/* Main Campaign Title */
+/* Main Title */
 .mpp-innerpage h1 {
-    color: var(--heading-color) !important;
-    font-size: 30px !important;
-    font-weight: 1000 !important;
-    line-height: 1.4 !important;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 10px !important;
+    color: var(--text-color) !important;
 }
 
-/* Campaign Subtitle */
+/* Subtitle */
 .mpp-innerpage > p {
-    visibility: hidden !important;
-    position: relative !important;
+    font-size: 14px !important;
+    color: var(--text-color) !important;
     margin-bottom: 20px !important;
 }
-.mpp-innerpage > p::after {
-    content: "God, where do you want me to be in my giving?" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    color: var(--heading-color) !important;
-    font-size: 15px !important;
-    line-height: 1.8 !important;
-}
 
-/* Pledge Details Heading */
-#pledgeForm h3:not(#contactBlankForm > h3),
-form#pledgeForm h3:not(#contactBlankForm > h3),
-.mppw-component-container h3:not(#contactBlankForm > h3),
-#pledgeCampaignWrapper h3:not(#contactBlankForm > h3),
+/* Remove Pledge Details text */
 h3:not(#contactBlankForm > h3) {
-    visibility: hidden !important;
-    position: relative !important;
-    margin-bottom: 20px !important;
-    display: block !important;
+    display: none !important;
 }
 
-#pledgeForm h3:not(#contactBlankForm > h3)::after,
-form#pledgeForm h3:not(#contactBlankForm > h3)::after,
-.mppw-component-container h3:not(#contactBlankForm > h3)::after,
-#pledgeCampaignWrapper h3:not(#contactBlankForm > h3)::after,
-h3:not(#contactBlankForm > h3)::after {
+/* Add My Giving Goal text */
+.mppw-form::before {
     content: "My Giving Goal" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--heading-color) !important;
+    display: block !important;
+    font-size: 16px !important;
     font-weight: 500 !important;
-    font-size: 20px !important;
-    text-transform: none !important;
-    display: block !important;
-    width: 100% !important;
-}
-
-/* Contact Section Heading */
-#contactBlankForm > h3 {
-    visibility: hidden !important;
-    position: relative !important;
-    margin-bottom: 20px !important;
-    display: block !important;
-}
-#contactBlankForm > h3::after {
-    content: "Contact" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--heading-color) !important;
-    font-weight: 500 !important;
-    font-size: 20px !important;
-    text-transform: none !important;
-    display: block !important;
-    width: 100% !important;
+    color: var(--text-color) !important;
+    margin-bottom: 15px !important;
 }
 
 /*--------------------------------------------------------------
 4. FORM STYLES
 --------------------------------------------------------------*/
 
-/* 4.1. Form Container */
+/* Form Container */
 .mppw-form {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
 }
 
-/* 4.2. Labels and Inputs */
+/* Form Fields */
+.mppw-form-field {
+    margin-bottom: 20px !important;
+}
 
-/* Hide Original Labels and Replace with Custom Labels */
-#contactBlankForm .mppw-form-field__label[for="FirstName"],
-#contactBlankForm .mppw-form-field__label[for="LastName"],
-#contactBlankForm .mppw-form-field__label[for="Email"],
-#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"],
-.mppw-form-field__label[for="InstallmentAmount"] {
-    visibility: hidden !important;
-    position: relative !important;
+/* Labels */
+.mppw-form-field__label,
+.mppw-form-field__alt-label-content {
     display: block !important;
+    font-size: 14px !important;
+    color: var(--text-color) !important;
     margin-bottom: 8px !important;
 }
 
-#contactBlankForm .mppw-form-field__label[for="FirstName"]::after,
-#contactBlankForm .mppw-form-field__label[for="LastName"]::after,
-#contactBlankForm .mppw-form-field__label[for="Email"]::after,
-#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after,
-.mppw-form-field__label[for="InstallmentAmount"]::after {
-    content: attr(data-label-text) !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--label-color) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Custom Labels Text */
-#contactBlankForm .mppw-form-field__label[for="FirstName"]::after {
-    content: "First Name*" !important;
-}
-#contactBlankForm .mppw-form-field__label[for="LastName"]::after {
-    content: "Last Name*" !important;
-}
-#contactBlankForm .mppw-form-field__label[for="Email"]::after {
-    content: "Email*" !important;
-}
-#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::after {
-    content: "Mobile Phone" !important;
-}
-.mppw-form-field__label[for="InstallmentAmount"]::after {
+/* Label Text Replacements */
+.mppw-form-field__label[for="InstallmentAmount"]::before {
     content: "Goal Amount*" !important;
 }
 
-/* Date Input Labels */
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content,
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content,
-label[for="Frequency"] .mppw-form-field__alt-label-content {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-}
-
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after,
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after,
-label[for="Frequency"] .mppw-form-field__alt-label-content::after {
-    content: attr(data-label-text) !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    color: var(--label-color) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-}
-
-/* Custom Labels Text */
-label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::after {
+label[for="FirstInstallmentDate"] .mppw-form-field__alt-label-content::before {
     content: "Goal Start Date*" !important;
 }
-label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::after {
+
+label[for="LastInstallmentDate"] .mppw-form-field__alt-label-content::before {
     content: "Goal End Date*" !important;
 }
-label[for="Frequency"] .mppw-form-field__alt-label-content::after {
-    content: "Select Frequency*" !important;
-}
 
-/* Hide the redundant label inside the div for "Select Frequency" */
-#Frequency + label.mppw-form-field__label {
-    display: none !important;
+label[for="Frequency"] .mppw-form-field__alt-label-content::before {
+    content: "Select Frequency" !important;
 }
 
 /* Input Fields */
 .mppw-form-field__control {
     width: 100% !important;
-    max-width: 600px !important;
     height: 40px !important;
     padding: 8px 12px !important;
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
-    background-color: var(--input-bg-color) !important;
-    box-sizing: border-box !important;
-    font-size: 16px !important;
-    color: var(--input-text-color) !important;
-    line-height: 1.4 !important;
+    font-size: 14px !important;
+    color: var(--text-color) !important;
+    background-color: white !important;
 }
 
-/* Ensure Floating Labels are Hidden if Present */
-.floating-label {
-    display: none !important;
-}
-
-/* 4.3. Total Pledge Display */
-
+/* Total Pledge Display */
 .total-pledge {
-    color: var(--heading-color) !important;
-    font-size: 14px !important;
     margin: 15px 0 !important;
-    padding: 10px !important;
-    background: var(--input-bg-color) !important;
-    border-radius: 4px !important;
-    display: inline-block !important;
-}
-
-/* Ensure Total Giving Goal and Value Align Properly */
-.form--row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    margin: 15px 0 !important;
-}
-
-/* Style for the label text */
-.form--row strong {
     font-size: 14px !important;
-    color: var(--label-color) !important;
-    font-weight: 400 !important;
-    display: inline-block !important;
-    margin-right: 4px !important;
+    color: var(--text-color) !important;
 }
-
-/* Remove the previous ::after content and use direct text */
-.form--row strong::after {
-    content: none !important;
-}
-
-#TotalPledgeValue {
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    color: var(--input-text-color) !important;
-    display: inline-block !important;
-}
-
-/* Container for the total amount display */
-.total-pledge {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 15px 0 !important;
-}
-
 
 /* Contact Section */
-.contact-section {
-    margin-top: 30px !important;
-    max-width: 800px !important;
+#contactBlankForm > h3 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+    margin: 30px 0 20px !important;
+}
+
+/* Contact Form Labels */
+#contactBlankForm .mppw-form-field__label[for="FirstName"]::before {
+    content: "First Name*" !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="LastName"]::before {
+    content: "Last Name*" !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="Email"]::before {
+    content: "Email*" !important;
+}
+
+#contactBlankForm .mppw-form-field__label[for="MobilePhoneNumber"]::before {
+    content: "Mobile Phone" !important;
 }
 
 /*--------------------------------------------------------------
 5. BUTTON STYLES
 --------------------------------------------------------------*/
 
+/* Submit Button */
+mpp-pledge-campaign::part(submit-button),
+#createPledge,
 .submit--btn {
-    background: var(--button-bg-color) !important;
-    border: none !important;
-    border-radius: 8px !important;
+    display: inline-block !important;
     padding: 10px 20px !important;
-    font-size: 16px !important;
+    background-color: var(--brand-navy) !important;
+    color: var(--brand-white) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
     font-weight: 500 !important;
-    color: var(--button-text-color) !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease !important;
-    text-transform: none !important;
-    width: auto !important;
-    min-width: 150px !important;
-    max-width: 200px !important;
+    cursor: pointer !important;
     text-align: center !important;
-    display: block !important;
-    margin: 0 auto !important;
-}
-
-.submit--btn:hover {
-    background: var(--button-hover-bg-color) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(-1px) !important;
+    min-width: 120px !important;
+    margin-top: 20px !important;
 }
 
 /*--------------------------------------------------------------
 6. SUCCESS MESSAGE STYLES
 --------------------------------------------------------------*/
 
-/* Success message container */
 .mppw-alert.mppw-alert__success {
+    margin: 20px 0 !important;
+    padding: 12px !important;
     background-color: #f1f9f1 !important;
     border: 1px solid #d4e8d4 !important;
-    padding: 12px 16px !important;
     border-radius: 4px !important;
-    margin: 20px 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-/* Icon styling */
-.mppw-alert__icon {
-    width: 16px !important;
-    height: 16px !important;
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.mppw-alert__icon::before {
-    content: "✓" !important;
-    color: #2d862d !important;
     font-size: 14px !important;
-}
-
-/* Message text */
-.mppw-alert__text {
-    visibility: hidden !important;
-    position: relative !important;
-    display: inline-block !important;
-    min-height: 20px !important;
-}
-
-.mppw-alert__text::after {
-    content: "Thank you for making a giving goal!" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
     color: #2d862d !important;
-    font-size: 14px !important;
 }
 /*--------------------------------------------------------------
 7. RESPONSIVE STYLES
