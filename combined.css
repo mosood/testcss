@@ -1,7 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
-/* Primary method using :has selector */
+
+/* Base font styles */
+.mpp-innerpage {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #777;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+
+/* Hide location section */
 .mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
     display: none !important;
+}
+
+/* Style all special titles */
+.mpp-innerpage--special-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #277c9f;
+    margin: 15px 0;
+    padding: 0;
+}
+
+/* Style special content */
+.mpp-innerpage--special-content {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.4;
+    margin: 10px 0;
 }
 
 /* Backup method for browsers that don't support :has */
@@ -18,11 +47,38 @@
     transition: opacity 0.3s ease, height 0.3s ease;
 }
 
-/* Mobile-specific handling */
+/* Mobile styles */
 @media screen and (max-width: 767px) {
+    .mpp-innerpage--special-title {
+        font-size: 20px;
+    }
+
+    .mpp-innerpage--special-content {
+        font-size: 20px;
+        margin: 12px 0;
+    }
+
     .mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
         display: none !important;
         margin: 0;
         padding: 0;
     }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mpp-innerpage--special-title {
+        font-size: 21px;
+    }
+
+    .mpp-innerpage--special-content {
+        font-size: 21px;
+    }
+}
+
+/* Ensure text alignment consistency */
+.mpp-innerpage--special *,
+.mpp-innerpage--special-title,
+.mpp-innerpage--special-content {
+    text-align: left !important;
 }
