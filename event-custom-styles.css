@@ -3,7 +3,7 @@
 /* Base styles for all screen sizes */
 .mpp-innerpage--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.4;
     margin: 15px 0;
     padding: 0;
@@ -23,7 +23,7 @@
 /* Text box styles */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.4;
     color: #777;
     text-align: left;
