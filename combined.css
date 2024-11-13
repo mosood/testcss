@@ -1,0 +1,147 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
+
+/* Hide location section */
+.mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
+    display: none !important;
+}
+
+/* Base styles for all screen sizes */
+.mpp-innerpage--description {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 15px 0;
+    padding: 0;
+    color: #777;
+    text-align: left;
+    word-break: normal;
+    font-weight: 300;
+    white-space: normal;
+    letter-spacing: -0.2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Text box styles */
+.mpp-card--description {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #777;
+    text-align: left;
+    padding: 0;
+    margin: 15px 0;
+    word-break: normal;
+    white-space: normal;
+    box-sizing: border-box;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-weight: 300;
+    letter-spacing: -0.2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Event Contact Name styles */
+.mpp-innerpage--name {
+    font-weight: 500;
+    color: #277c9f;
+    font-size: 18px;
+    line-height: 1.4;
+    padding-left: 0;
+}
+
+/* Container for the buttons */
+.mpp-event-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Search Events button - centered */
+.mpp-event-search-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Show Advanced button - right aligned */
+.mpp-event-advanced-button {
+    position: absolute;
+    right: 0;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Mobile styles (screens smaller than 768px) */
+@media screen and (max-width: 767px) {
+    .mpp-innerpage--description,
+    .mpp-card--description {
+        font-size: 20px;
+        padding: 0;
+        line-height: 1.4;
+        margin: 12px 0;
+        -webkit-line-clamp: 4;
+    }
+
+    .mpp-innerpage--name {
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+    /* Mobile-specific hiding of location */
+    .mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
+        display: none !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Tablet styles (screens between 768px and 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mpp-innerpage--description,
+    .mpp-card--description {
+        font-size: 21px;
+        padding: 0;
+        line-height: 1.4;
+        -webkit-line-clamp: 4;
+    }
+}
+
+/* Ensure consistent text alignment across all devices */
+* {
+    text-align: left !important;
+}
+
+/* Backup method for hiding location if :has selector is not supported */
+.mpp-innerpage--special .mpp-innerpage--special-title:not(.mpp-excluded) {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Add smooth transitions for any visibility changes */
+.mpp-innerpage--special {
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
