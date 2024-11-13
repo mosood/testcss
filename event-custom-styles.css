@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
+
 /* Base styles for all screen sizes */
 .mpp-innerpage--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.4;
     margin: 15px 0;
     padding: 0;
@@ -21,7 +23,7 @@
 /* Text box styles */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.4;
     color: #777;
     text-align: left;
@@ -49,6 +51,39 @@
     font-size: 18px;
     line-height: 1.4;
     padding-left: 0;
+}
+
+/* Container for the buttons */
+.mpp-event-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Search Events button - centered */
+.mpp-event-search-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Show Advanced button - right aligned */
+.mpp-event-advanced-button {
+    position: absolute;
+    right: 0;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
 }
 
 /* Mobile styles (screens smaller than 768px) */
