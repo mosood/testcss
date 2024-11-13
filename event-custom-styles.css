@@ -4,15 +4,20 @@
 .mpp-innerpage--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-size: 22px;
-    line-height: 1.4;  /* Reduced line height */
-    margin: 15px 0;    /* Added consistent margin */
+    line-height: 1.4;
+    margin: 15px 0;
     padding: 0;
-    color: #777;       /* Even lighter gray */
+    color: #777;
     text-align: left;
-    word-break: normal;  /* Changed from break-word */
+    word-break: normal;
     font-weight: 300;
     white-space: normal;
-    letter-spacing: -0.2px;  /* Slight letter spacing adjustment */
+    letter-spacing: -0.2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;  /* Show only 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Add ellipsis at the end */
 }
 
 /* Text box styles */
@@ -32,15 +37,9 @@
     border-radius: 0;
     font-weight: 300;
     letter-spacing: -0.2px;
-}
-
-/* Mobile styles (screens smaller than 768px) */
-@media screen and (max-width: 767px) {
-    .mpp-innerpage--description,
-    .mpp-card--description {
-        font-size: 20px;
-        padding: 0;
-        line-height: 1.4;
-        margin: 12px 0;
-    }
+    display: -webkit-box;
+    -webkit-line-clamp: 4;  /* Show only 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Add ellipsis at the end */
 }
