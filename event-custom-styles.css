@@ -3,84 +3,56 @@
 /* Base styles for all screen sizes */
 .mpp-innerpage--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 10px;  /* Reduced from 20px */
+    padding: 0;  /* Removed padding */
     color: #333;
-    text-align: left; /* Changed from justify to left for consistency */
+    text-align: left;
     word-break: break-word;
 }
 
 /* Text box styles */
 .mpp-card--description {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
     color: #333;
     text-align: left;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;  /* Removed padding */
+    margin: 10px 0;  /* Reduced margin */
     word-break: break-word;
     white-space: normal;
     box-sizing: border-box;
+    background: none;  /* Removed background */
+    box-shadow: none;  /* Removed box shadow */
+    border-radius: 0;  /* Removed border radius */
 }
 
 /* Event Contact Name styles */
 .mpp-innerpage--name {
     font-weight: 500;
     color: #277c9f;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.4;
-    padding-left: 10px;
-}
-
-/* Event Contact title styles */
-.mpp-innerpage--special-title {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-
-.mpp-innerpage--special-title:first-of-type {
-    font-weight: 500;
-}
-
-.mpp-innerpage--special:first-of-type {
-    margin-bottom: 1rem;
+    padding-left: 0;  /* Removed left padding */
 }
 
 /* Mobile styles (screens smaller than 768px) */
 @media screen and (max-width: 767px) {
     .mpp-innerpage--description,
     .mpp-card--description {
-        font-size: 16px; /* Slightly smaller font for mobile */
-        padding: 15px; /* Reduced padding for mobile */
-        line-height: 1.6; /* Slightly tighter line height for mobile */
+        font-size: 18px;
+        padding: 0;  /* Removed padding */
+        line-height: 1.6;
     }
 
     .mpp-card--description {
-        margin: 10px 0; /* Reduced margins for mobile */
-        border-radius: 8px; /* Slightly smaller border radius */
+        margin: 10px 0;
     }
 
     .mpp-innerpage--name {
-        font-size: 15px; /* Slightly smaller font for mobile */
-        padding-left: 8px; /* Reduced padding for mobile */
+        font-size: 16px;
+        padding-left: 0;  /* Removed padding */
     }
-}
-
-/* Tablet styles (screens between 768px and 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .mpp-innerpage--description,
-    .mpp-card--description {
-        font-size: 17px; /* Medium size font for tablets */
-        padding: 18px; /* Medium padding for tablets */
-    }
-}
-
-/* Ensure consistent text alignment across all devices */
-* {
-    text-align: left !important; /* Force left alignment everywhere */
 }
