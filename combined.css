@@ -1,84 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500&display=swap');
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
 
 /* Base font styles */
 .mpp-innerpage {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    color: #777;
-    line-height: 1.4;
-    letter-spacing: -0.2px;
+    color: #484848; /* Darker than previous #777 for better readability */
+    line-height: 1.5;
+    letter-spacing: normal; /* Remove negative letter spacing */
 }
 
-/* Hide location section */
-.mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
-    display: none !important;
+/* Title styles */
+.mpp-innerpage--title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-/* Style all special titles */
-.mpp-innerpage--special-title {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18px;
+/* Date/Time styles */
+.mpp-innerpage--datetime {
     font-weight: 500;
-    color: #277c9f;
+    font-size: 20px;
+    color: #444444;
     margin: 15px 0;
-    padding: 0;
 }
 
-/* Style special content */
-.mpp-innerpage--special-content {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+/* Description styles */
+.mpp-innerpage--description {
+    font-weight: 400; /* Increased from 300 for better readability */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #484848;
+    margin: 15px 0;
+}
+
+/* Section titles (like "More Details") */
+.mpp-innerpage--section-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    margin: 25px 0 15px 0;
+}
+
+/* Book titles */
+.mpp-innerpage--book-title {
+    font-weight: 500;
     font-size: 18px;
-    font-weight: 300;
-    color: #777;
-    line-height: 1.4;
+    color: #277c9f;
     margin: 10px 0;
-}
-
-/* Backup method for browsers that don't support :has */
-.mpp-innerpage--special .mpp-innerpage--special-title:not(.mpp-excluded) {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-/* Add smooth transitions */
-.mpp-innerpage--special {
-    transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
-    .mpp-innerpage--special-title {
-        font-size: 20px;
+    .mpp-innerpage--title {
+        font-size: 28px;
     }
-
-    .mpp-innerpage--special-content {
-        font-size: 20px;
-        margin: 12px 0;
+    
+    .mpp-innerpage--datetime {
+        font-size: 18px;
     }
-
-    .mpp-innerpage--special:has([class*="special-title"]:contains('Location')) {
-        display: none !important;
-        margin: 0;
-        padding: 0;
+    
+    .mpp-innerpage--description {
+        font-size: 16px;
+        line-height: 1.5;
     }
 }
 
-/* Tablet styles */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .mpp-innerpage--special-title {
-        font-size: 21px;
-    }
-
-    .mpp-innerpage--special-content {
-        font-size: 21px;
-    }
+/* Additional text enhancements */
+strong, b {
+    font-weight: 600;
 }
 
-/* Ensure text alignment consistency */
-.mpp-innerpage--special *,
-.mpp-innerpage--special-title,
-.mpp-innerpage--special-content {
-    text-align: left !important;
+/* Ensure text stays crisp */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
